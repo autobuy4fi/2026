@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한국 팟캐스트 시장 조사 리포트 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --ink-soft: #3d3530;
+    --ink-muted: #7a6f68;
+    --paper: #f5f0e8;
+    --paper-dark: #ece5d8;
+    --paper-mid: #e8e0cf;
+    --accent: #c4401a;
+    --accent-warm: #e07c3a;
+    --accent-light: #f5e6d8;
+    --teal: #1d6b6b;
+    --teal-light: #d4eaea;
+    --gold: #b8922a;
+    --gold-light: #f5edd8;
+    --border: #c8bfb0;
+    --border-light: #ddd5c5;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  /* ─── HEADER ─── */
+  .site-header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 60px 40px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 18px,
+      rgba(255,255,255,0.025) 18px,
+      rgba(255,255,255,0.025) 19px
+    );
+  }
+  .header-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .report-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--accent-warm);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .report-label::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 1px;
+    background: var(--accent-warm);
+  }
+  .site-header h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(26px, 4vw, 40px);
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  .header-sub {
+    font-size: 14px;
+    color: rgba(245,240,232,0.6);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+  .header-meta {
+    margin-top: 36px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .meta-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: rgba(245,240,232,0.45);
+    text-transform: uppercase;
+  }
+  .meta-value {
+    font-size: 13px;
+    color: rgba(245,240,232,0.85);
+    font-weight: 500;
+  }
+
+  /* ─── NAV ─── */
+  .toc-bar {
+    background: var(--paper-dark);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .toc-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .toc-inner::-webkit-scrollbar { display: none; }
+  .toc-link {
+    display: block;
+    padding: 14px 18px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-muted);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: all 0.2s;
+    letter-spacing: 0.01em;
+  }
+  .toc-link:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* ─── LAYOUT ─── */
+  .content-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+
+  /* ─── SUMMARY BOX ─── */
+  .summary-block {
+    margin: 48px 0 0;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 3px;
+    padding: 40px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+  .summary-block::after {
+    content: 'TL;DR';
+    position: absolute;
+    right: 32px;
+    top: 24px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: rgba(245,240,232,0.2);
+    text-transform: uppercase;
+  }
+  .summary-block h2 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent-warm);
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+  .summary-block p {
+    font-size: 14px;
+    color: rgba(245,240,232,0.82);
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+  .summary-block p:last-child { margin-bottom: 0; }
+  .summary-block strong { color: #f5f0e8; font-weight: 600; }
+
+  /* ─── KEY METRICS ─── */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 40px 0;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .metric-card {
+    background: var(--paper);
+    padding: 28px 24px;
+    position: relative;
+  }
+  .metric-card:hover {
+    background: var(--paper-dark);
+  }
+  .metric-num {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+  .metric-unit {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-muted);
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+  .metric-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .metric-source {
+    font-size: 10px;
+    color: var(--ink-muted);
+    margin-top: 8px;
+    font-style: italic;
+  }
+  .metric-tag {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    padding: 3px 7px;
+    border-radius: 2px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .tag-fact { background: var(--teal-light); color: var(--teal); }
+  .tag-est { background: var(--gold-light); color: var(--gold); }
+  .tag-alert { background: #fde8e4; color: var(--accent); }
+
+  /* ─── SECTION ─── */
+  .section {
+    margin-top: 60px;
+  }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .subsection {
+    margin-top: 36px;
+  }
+  .subsection-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 14px;
+    padding-left: 14px;
+    border-left: 3px solid var(--accent);
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    margin-bottom: 14px;
+    color: var(--ink-soft);
+    font-size: 14.5px;
+  }
+  p strong { color: var(--ink); }
+
+  /* ─── TABLE ─── */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 20px 0;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  thead { background: var(--ink); color: var(--paper); }
+  thead th {
+    padding: 12px 16px;
+    text-align: left;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  tbody tr { border-bottom: 1px solid var(--border-light); }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: var(--paper-dark); }
+  tbody td {
+    padding: 12px 16px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    vertical-align: top;
+  }
+  tbody td:first-child { font-weight: 500; color: var(--ink); }
+  .td-accent { color: var(--accent) !important; font-weight: 600 !important; }
+  .td-teal { color: var(--teal) !important; font-weight: 600 !important; }
+
+  /* ─── PLATFORM CARDS ─── */
+  .platform-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .platform-card {
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 20px 22px;
+    background: var(--paper);
+    position: relative;
+  }
+  .platform-name {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .platform-status {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    padding: 2px 7px;
+    border-radius: 2px;
+    letter-spacing: 0.08em;
+  }
+  .status-danger { background: #fde8e4; color: var(--accent); }
+  .status-ok { background: var(--teal-light); color: var(--teal); }
+  .status-growing { background: var(--gold-light); color: var(--gold); }
+  .platform-desc {
+    font-size: 13px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+
+  /* ─── CALLOUT ─── */
+  .callout {
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    padding: 18px 22px;
+    margin: 24px 0;
+    border-radius: 0 3px 3px 0;
+  }
+  .callout-teal {
+    border-left-color: var(--teal);
+    background: var(--teal-light);
+  }
+  .callout-gold {
+    border-left-color: var(--gold);
+    background: var(--gold-light);
+  }
+  .callout p {
+    margin: 0;
+    font-size: 13.5px;
+    color: var(--ink);
+  }
+  .callout strong { color: var(--ink); }
+
+  /* ─── BOOK TABLE ─── */
+  .book-empty {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--paper-dark);
+    border: 2px dashed var(--border);
+    border-radius: 3px;
+    margin: 20px 0;
+  }
+  .book-empty .big-text {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 36px;
+    color: var(--border);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .book-empty p {
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+
+  /* ─── RECOMMENDATION ─── */
+  .rec-block {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 40px;
+  }
+  .rec-header {
+    background: var(--accent);
+    padding: 20px 32px;
+  }
+  .rec-header h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.01em;
+  }
+  .rec-body {
+    padding: 32px;
+  }
+  .rec-item {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .rec-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .rec-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 20px;
+    color: var(--accent-warm);
+    font-weight: 500;
+    flex-shrink: 0;
+    width: 32px;
+    line-height: 1.3;
+  }
+  .rec-text {
+    font-size: 13.5px;
+    color: rgba(245,240,232,0.82);
+    line-height: 1.75;
+  }
+  .rec-text strong { color: #f5f0e8; }
+
+  /* ─── CAVEATS ─── */
+  .caveat-list {
+    list-style: none;
+    margin: 16px 0;
+  }
+  .caveat-list li {
+    display: flex;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--ink-muted);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-light);
+    line-height: 1.6;
+  }
+  .caveat-list li:last-child { border-bottom: none; }
+  .caveat-list li::before {
+    content: '※';
+    font-family: 'DM Mono', monospace;
+    color: var(--accent);
+    flex-shrink: 0;
+    font-size: 12px;
+    margin-top: 1px;
+  }
+
+  /* ─── FOOTER ─── */
+  .site-footer {
+    background: var(--paper-dark);
+    border-top: 1px solid var(--border);
+    padding: 32px 40px;
+    text-align: center;
+  }
+  .site-footer p {
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+
+  /* ─── TREND CHART ─── */
+  .trend-chart {
+    background: var(--paper-dark);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 28px;
+    margin: 20px 0;
+  }
+  .trend-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .chart-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    height: 120px;
+  }
+  .bar-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+  }
+  .bar {
+    width: 100%;
+    background: var(--accent);
+    border-radius: 2px 2px 0 0;
+    position: relative;
+    transition: opacity 0.2s;
+    min-width: 32px;
+  }
+  .bar:hover { opacity: 0.8; }
+  .bar-val {
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .bar-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-muted);
+    letter-spacing: 0.05em;
+  }
+  .chart-note {
+    font-size: 11px;
+    color: var(--ink-muted);
+    margin-top: 12px;
+    font-style: italic;
+  }
+
+  .verdict-banner {
+    background: var(--teal);
+    color: white;
+    padding: 24px 32px;
+    border-radius: 3px;
+    margin: 32px 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .verdict-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+  }
+  .verdict-text h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .verdict-text p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+    margin: 0;
+  }
+
+  @media (max-width: 640px) {
+    .site-header, .toc-bar, .content-wrap, .site-footer { padding-left: 20px; padding-right: 20px; }
+    .metrics-grid { grid-template-columns: 1fr 1fr; }
+    .platform-grid { grid-template-columns: 1fr; }
+    .header-meta { gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="report-label">Market Research Report</div>
+    <h1>한국 팟캐스트 시장 조사<br>— 입문자용 제작 가이드북 출판 타당성</h1>
+    <p class="header-sub">《팟캐스트 만들기》 기획 내부 자료 | 이지스퍼블리싱</p>
+    <div class="header-meta">
+      <div class="meta-item">
+        <span class="meta-label">조사 기준일</span>
+        <span class="meta-value">2025년 5월</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">조사 범위</span>
+        <span class="meta-value">한국 시장 집중 (글로벌 비교 포함)</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">대상 도서</span>
+        <span class="meta-value">입문자용 팟캐스트 제작 가이드</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="toc-bar">
+  <div class="toc-inner">
+    <a class="toc-link" href="#summary">핵심 요약</a>
+    <a class="toc-link" href="#keymetrics">주요 수치</a>
+    <a class="toc-link" href="#market">1. 시장 규모</a>
+    <a class="toc-link" href="#demand">2. 제작 수요</a>
+    <a class="toc-link" href="#books">3. 경쟁 도서</a>
+    <a class="toc-link" href="#global">4. 글로벌 트렌드</a>
+    <a class="toc-link" href="#rec">출판 권고</a>
+    <a class="toc-link" href="#caveats">주의사항</a>
+  </div>
+</nav>
+
+<div class="content-wrap">
+
+  <!-- SUMMARY -->
+  <div id="summary" class="summary-block">
+    <h2>핵심 요약 (TL;DR)</h2>
+    <p>한국 팟캐스트 청취율은 2019년 18%에서 2025년 <strong>11%대</strong>로 정체·축소 국면이지만, 유튜브 팟캐스트와 스포티파이 진입으로 <strong>'영상 결합형 팟캐스트' 제작 수요</strong>가 새롭게 열리고 있다.</p>
+    <p>2025년 국내 오디오 플랫폼 지형은 격변 중이다. 네이버 오디오클립이 2025년 12월 31일 서비스 종료를 확정했고, 팟빵은 2025년 2월 음저협 계약 만료로 대규모 저작권 사태를 겪었다. 실질적 청취 플랫폼은 <strong>유튜브 · 스포티파이 · 애플 팟캐스트</strong>로 재편됐다. 입문자가 "어디서 어떻게 시작해야 하는지" <strong>다시 안내가 필요한 시점</strong>이다.</p>
+    <p>국내 출판 시장에 <strong>'입문자용 팟캐스트 가이드북'은 사실상 공백</strong>이다. 표준서인 『된다! 팟캐스트&유튜브 실전 제작법』(이지스퍼블리싱, 2016)은 9년 된 책이고, 2023~2025년 신간은 확인되지 않았다. 출판 타당성은 <strong>"있음"</strong> — 단, 'AI·유튜브·스포티파이 시대의 1인 오디오·영상 제작 가이드'로 포지셔닝해야 한다.</p>
+  </div>
+
+  <!-- KEY METRICS -->
+  <div id="keymetrics">
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <span class="metric-tag tag-fact">FACT</span>
+        <div class="metric-num">11%</div>
+        <div class="metric-unit">연간 청취율 (만 13세+)</div>
+        <div class="metric-label">2025년 기준. 2019년 18%에서 지속 하락</div>
+        <div class="metric-source">출처: 한국갤럽 미디어·콘텐츠 조사 2025</div>
+      </div>
+      <div class="metric-card">
+        <span class="metric-tag tag-est">추정</span>
+        <div class="metric-num">484만</div>
+        <div class="metric-unit">연간 청취자 수 (명)</div>
+        <div class="metric-label">만 13세+ 인구 4,400만 × 11% 자체 추정</div>
+        <div class="metric-source">통계청 인구 기준 추정치</div>
+      </div>
+      <div class="metric-card">
+        <span class="metric-tag tag-fact">FACT</span>
+        <div class="metric-num">2.8만+</div>
+        <div class="metric-unit">팟빵 등록 채널 수</div>
+        <div class="metric-label">2017년 9,200개 → 2024년 28,000+ 약 3배 성장</div>
+        <div class="metric-source">출처: 팟빵 공식 회사 페이지 2024</div>
+      </div>
+      <div class="metric-card">
+        <span class="metric-tag tag-fact">FACT</span>
+        <div class="metric-num">162억</div>
+        <div class="metric-unit">팟빵 연매출 (원, 2024)</div>
+        <div class="metric-label">국내 대표 팟캐스트 플랫폼 최신 매출</div>
+        <div class="metric-source">출처: 잡코리아·원티드인사이트 공시</div>
+      </div>
+      <div class="metric-card">
+        <span class="metric-tag tag-alert">이슈</span>
+        <div class="metric-num" style="font-size:22px; color: var(--accent);">서비스 종료</div>
+        <div class="metric-unit">네이버 오디오클립</div>
+        <div class="metric-label">2025년 12월 31일 종료 확정. 9년 만의 철수</div>
+        <div class="metric-source">출처: 네이버 공식, 이데일리 2025.10.01</div>
+      </div>
+      <div class="metric-card">
+        <span class="metric-tag tag-fact">FACT</span>
+        <div class="metric-num">10억+</div>
+        <div class="metric-unit">유튜브 팟캐스트 글로벌 MAU</div>
+        <div class="metric-label">스포티파이(6.75억)를 추월. 세계 1위 팟캐스트 플랫폼으로</div>
+        <div class="metric-source">출처: YouTube 공식 블로그 2025.2.26 / Variety</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <section id="market" class="section">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">한국 팟캐스트 시장 규모 및 성장 (2022~2025)</h2>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">청취자 수 변화 — '정체 후 약간 후퇴'</h3>
+      <p>한국갤럽 「미디어·콘텐츠·소셜 네트워크 서비스 이용률」 조사(만 13세 이상, 2025년 3~7월, 표본 5,251명)에 따른 연간 팟캐스트 청취율 추이는 아래와 같다.</p>
+
+      <!-- 간이 차트 -->
+      <div class="trend-chart">
+        <div class="trend-title">한국 팟캐스트 연간 청취율 추이 (한국갤럽, 만 13세 이상)</div>
+        <div class="chart-bars">
+          <div class="bar-group">
+            <div class="bar" style="height:108px;"><span class="bar-val">18%</span></div>
+            <div class="bar-year">2019</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:78px;"><span class="bar-val">13%</span></div>
+            <div class="bar-year">2020</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:72px; background: var(--ink-muted);"><span class="bar-val" style="color:var(--ink-muted)">~12%</span></div>
+            <div class="bar-year">2021</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:72px; background: var(--ink-muted);"><span class="bar-val" style="color:var(--ink-muted)">~12%</span></div>
+            <div class="bar-year">2022</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:66px;"><span class="bar-val">11%</span></div>
+            <div class="bar-year">2023</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:66px;"><span class="bar-val">11%</span></div>
+            <div class="bar-year">2025</div>
+          </div>
+        </div>
+        <p class="chart-note">※ 2021~2022년 수치는 추정치 (한국갤럽 중간 조사 미공표). 연간 1회 이상 청취 경험 기준.</p>
+      </div>
+
+      <div class="callout callout-gold">
+        <p>청취율 11%는 연간 1회 이상 기준. 월간/주간 적극 청취자는 이보다 훨씬 작다(추정 5~7%). 시장의 절대 크기는 글로벌 대비 작음을 인지해야 한다.</p>
+      </div>
+
+      <p>청취자 인구 추정: 만 13세 이상 인구(통계청 기준 약 4,400만 명) × 11% ≈ <strong>약 484만 명</strong>(연간 1회 이상 청취 경험자, 자체 추정치). 연령 분포는 <strong>10~40대 학생·직장인</strong>에 집중되어 있으며, 60대 이상은 한 자릿수에 그친다.</p>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">채널·제작자 수 — '제작자는 꾸준히 증가'</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>연도</th><th>팟빵 등록 채널 수</th><th>비고</th></tr></thead>
+          <tbody>
+            <tr><td>2017년 1월</td><td>약 9,200개</td><td>팟빵 공식 발표</td></tr>
+            <tr><td>2018~2019년</td><td>약 13,000개</td><td>나꼼수 이후 1인 방송 붐</td></tr>
+            <tr><td>2024년</td><td class="td-accent">28,000개 이상</td><td>팟빵 공식 회사 페이지 기준</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>청취자는 줄었지만 제작 채널은 늘었다.</strong> 6년 만에 약 3배 이상 증가. 다만 활성 채널(최근 3개월 내 업로드) 비율은 별도 확인 필요.</p>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">주요 플랫폼별 현황 (2025년 5월 기준)</h3>
+      <div class="platform-grid">
+        <div class="platform-card">
+          <div class="platform-name">팟빵 <span class="platform-status status-danger">위기</span></div>
+          <div class="platform-desc">매출 162억(2024). 임직원 36~37명. <strong>2025년 2월 음저협 계약 만료</strong>로 저작권 송출 제한 사태 발생. 음악·효과음 포함 에피소드 대거 차단. 제작자 이탈 가속화 중.</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-name">네이버 오디오클립 <span class="platform-status status-danger">종료</span></div>
+          <div class="platform-desc"><strong>2025년 12월 31일 서비스 종료 확정</strong> (네이버 공식 통보, 2025.10.01). 9년 만의 철수. AI 스피커 시장 정체 + 생성형 AI·OTT·숏폼 경쟁이 원인.</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-name">스포티파이 코리아 <span class="platform-status status-growing">성장</span></div>
+          <div class="platform-desc">2022년 10월 팟캐스트 서비스 개시. 글로벌 400만+ 카탈로그 제공. <strong>앵커(Anchor) 한국어 제작 플랫폼 무료 지원</strong>으로 진입 장벽 인하.</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-name">유튜브 팟캐스트 <span class="platform-status status-growing">주도</span></div>
+          <div class="platform-desc">글로벌 MAU 10억+ (2025.2 공식 발표). 한국에서는 '뜬뜬', '매불쇼', '정희원의 저속노화' 등 <strong>영상 결합형</strong>이 급성장. 사실상 한국 1위 팟캐스트 플랫폼.</div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p><strong>구조적 의미:</strong> 국내 토종 오디오 플랫폼은 사실상 팟빵 1개만 남고, 시장 주도권은 글로벌 플랫폼(유튜브·스포티파이·애플)으로 이동. 입문자에게 "어느 플랫폼에 어떻게 올려야 하는가"의 가이드 필요성이 그 어느 때보다 높다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section id="demand" class="section">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">팟캐스트 제작 수요 (입문자 중심)</h2>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">제작 진입장벽의 급격한 하락</h3>
+      <p><strong>스포티파이 앵커 한국어 지원(2022.10~)</strong>: 무료로 팟캐스트를 제작·편집하여 여러 플랫폼에 동시 배포 가능. 청취자 데이터·인사이트도 무료 제공. 제작 인프라가 완전히 민주화됐다.</p>
+      <p><strong>유튜브 스튜디오 팟캐스트 기능</strong>: 재생목록을 팟캐스트로 지정하면 YouTube Music에 자동 배포. 한국 크리에이터가 영상에서 팟캐스트로 진입하는 '역방향' 흐름이 뚜렷하다.</p>
+      <p><strong>AI 도구의 등장</strong>: Google NotebookLM 'AI 음성 개요', CapCut 팟캐스트 메이커, Monica AI 등이 한국어 마케팅을 본격화(2024~2025). "1클릭으로 팟캐스트" 광고가 범람하고 있다.</p>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">온라인 강의 수요로 확인되는 학습 니즈</h3>
+      <p>MKYU·Class101 등에서 라디오 PD 출신 강사의 '오디오 크리에이터 되기' 코스가 운영될 정도로 학습 수요는 견고하다. (예: MKYU 「내 목소리 하나로 오디오 크리에이터 되기」, 강사 김핌, 전 tbs FM/YTN 라디오 PD)</p>
+      <div class="callout callout-teal">
+        <p>온라인 강의가 이미 존재한다는 사실은 수요가 있다는 증거이기도 하지만, <strong>체계적으로 정리된 책이 없어 강의로 대체되고 있다</strong>는 신호이기도 하다. 강의보다 저렴하고 참고하기 쉬운 책의 필요성이 여기서 온다.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">기업·브랜드 팟캐스트 (B2B 수요)</h3>
+      <p>국내 브랜디드 팟캐스트 사례: 밀리의 서재 × 이다혜 「리딩 케미스트리」, 세바시 팟캐스트, 알릴레오 북's, 북저널리즘 × 출판사 협업 등이 활발하다.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>글로벌 지표</th><th>수치</th><th>출처</th></tr></thead>
+          <tbody>
+            <tr><td>포춘 500 기업 중 브랜디드 팟캐스트 보유</td><td class="td-accent">38%</td><td>Searchlab Podcast Statistics 2026</td></tr>
+            <tr><td>미국 팟캐스트 광고 매출 (2024)</td><td class="td-accent">24억 달러 (+26.4% YoY)</td><td>IAB/PwC Internet Ad Revenue Report 2025.4</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">유튜버 → 팟캐스트 크리에이터 트렌드</h3>
+      <p>한국에서 '밥친구 콘텐츠' — 1시간 가까운 정적인 대화형 영상 콘텐츠가 MZ세대 사이에서 인기를 얻고 있다. 숏폼 피로감의 반작용으로 해석되며, 뜬뜬·매불쇼·핑계고 등이 대표 사례다. 이들은 사실상 <strong>'영상화된 팟캐스트'</strong>로, 이 포맷을 시작하고 싶은 크리에이터에게는 제작 가이드가 필수적이다.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section id="books" class="section">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">경쟁 도서 분석</h2>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>도서명</th><th>저자</th><th>출판사</th><th>출간연도</th><th>현황</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>된다! 팟캐스트&유튜브 실전 제작법</td>
+            <td>한지환, 김창현</td>
+            <td>이지스퍼블리싱</td>
+            <td class="td-accent">2016.02</td>
+            <td>시장 표준서. 9년 경과. 판매 중.</td>
+          </tr>
+          <tr>
+            <td>팟캐스트 쉽게 만들기</td>
+            <td>김지선</td>
+            <td>웰북(WellBook)</td>
+            <td>2012.03</td>
+            <td>품절/절판 확인 (Aladin 기준)</td>
+          </tr>
+          <tr>
+            <td>2023~2025년 신간 입문서</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td class="td-accent">확인된 신간 0건</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="book-empty">
+      <div class="big-text">0건</div>
+      <p>교보문고·예스24·알라딘 검색 기준,<br>2023~2025년 출간된 국내 팟캐스트 입문서 신간 없음.</p>
+    </div>
+
+    <div class="callout">
+      <p><strong>결정적 발견:</strong> 이지스퍼블리싱조차 후속 도서로 『된다! 7일 베가스 프로 영상 편집』(2023) 처럼 영상 편집서로 라인업을 옮겼다. 인접 카테고리(유튜브 만들기, 영상 편집, AI 콘텐츠)에는 베스트셀러 후보가 다수 존재하지만, <strong>'순수 팟캐스트' 입문서는 사실상 시장 공백</strong>이다.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section id="global" class="section">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">글로벌 트렌드 — 한국에 대한 시사점</h2>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>글로벌 지표</th><th>수치</th><th>출처</th></tr></thead>
+        <tbody>
+          <tr><td>미국 12세+ 월간 팟캐스트 청취율</td><td class="td-teal">47% (역대 최고)</td><td>Edison Research, Infinite Dial 2024</td></tr>
+          <tr><td>미국 주간 팟캐스트 청취자 수</td><td class="td-teal">약 9,800만 명 (34%)</td><td>Edison Research, Infinite Dial 2024</td></tr>
+          <tr><td>글로벌 팟캐스트 수 (2024)</td><td class="td-teal">500만+ 개</td><td>Searchlab Podcast Statistics 2026</td></tr>
+          <tr><td>2018년 글로벌 팟캐스트 수</td><td>약 55만 개</td><td>각종 리서치 기관</td></tr>
+          <tr><td>6년간 공급자 증가</td><td class="td-teal">약 9배</td><td>자체 계산</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>미국은 청취자의 47%가 월 1회 이상 팟캐스트를 듣는다. 한국의 연간 11%와 격차가 크지만 추세는 동일하다 — <strong>플랫폼이 유튜브 중심으로 이동</strong>하고 있다는 것.</p>
+
+    <div class="callout callout-gold">
+      <p><strong>주의:</strong> 글로벌 시장조사 보고서 간 수치 편차가 매우 크다(2024년 시장 규모 추정: 190억~270억 달러). 단일 수치 인용 시 반드시 출처를 명시해야 한다. 국내 광고 시장은 글로벌 대비 매우 소규모로, 미국 수치와 직접 비교는 금물.</p>
+    </div>
+  </section>
+
+  <!-- RECOMMENDATION -->
+  <section id="rec" class="section">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">출판 권고</h2>
+    </div>
+
+    <div class="verdict-banner">
+      <div class="verdict-icon">✓</div>
+      <div class="verdict-text">
+        <h3>결론: 출판 타당성 있음 — 단, 포지셔닝 재설계 필수</h3>
+        <p>2016년 이후 시장 공백, 플랫폼 전면 재편, AI 도구 등장이 맞물려 신간의 필요성이 충분하다.</p>
+      </div>
+    </div>
+
+    <div class="rec-block">
+      <div class="rec-header">
+        <h3>즉시 실행 권고사항</h3>
+      </div>
+      <div class="rec-body">
+        <div class="rec-item">
+          <div class="rec-num">01</div>
+          <div class="rec-text"><strong>'2025~2026년판 팟캐스트 입문서'로 가는 게 맞다.</strong> 2022년 스포티파이·앵커 한국 진입, 2024~2025년 유튜브 팟캐스트 부상(MAU 10억+), 2025년 오디오클립 종료·팟빵 저작권 사태까지 모든 인프라가 바뀌었다. 신간 공백은 명확한 기회다.</div>
+        </div>
+        <div class="rec-item">
+          <div class="rec-num">02</div>
+          <div class="rec-text"><strong>'AI 시대의 팟캐스트 만들기' 키워드 선점.</strong> Google NotebookLM·앵커·CapCut·Riverside 활용 챕터를 반드시 포함. 기존 도서들이 다루지 못한 영역이며, 검색 트래픽도 여기에 몰린다.</div>
+        </div>
+        <div class="rec-item">
+          <div class="rec-num">03</div>
+          <div class="rec-text"><strong>'영상화된 팟캐스트(YouTube/Spotify Video Podcast)' 가이드 필수.</strong> 2024~2025년 한국의 사실상 표준 포맷이다. 이를 빠뜨리면 출간 시점에 이미 구식.</div>
+        </div>
+        <div class="rec-item">
+          <div class="rec-num">04</div>
+          <div class="rec-text"><strong>타깃은 '입문자' + '브랜드/1인 사업자'의 이중 트랙.</strong> B2C 청취율은 정체지만, 포춘 500 기업 38%가 브랜디드 팟캐스트를 운영하는 글로벌 추세를 감안하면 "비즈니스를 위한 팟캐스트" 챕터를 핵심에 둘 것.</div>
+        </div>
+        <div class="rec-item">
+          <div class="rec-num">05</div>
+          <div class="rec-text"><strong>플랫폼 챕터 구성 재편.</strong> 팟빵 비중 축소 → 스포티파이(앵커)/애플/유튜브 중심으로. 오디오클립은 종료 사실 명기.</div>
+        </div>
+        <div class="rec-item">
+          <div class="rec-num">06</div>
+          <div class="rec-text"><strong>마케팅 타깃:</strong> 유튜브 크리에이터·뉴스레터 운영자·1인 브랜드 자영업자에게 집중. "당신의 콘텐츠를 오디오로도 확장하라"가 핵심 메시지. 밀리의 서재·리디 동시 출간, 오디오북 동시 출시도 검토.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAVEATS -->
+  <section id="caveats" class="section">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2 class="section-title">팩트체크 주의사항</h2>
+    </div>
+    <p>아래 항목은 출판 의사결정 전 추가 확인이 필요하거나, 본 리서치에서 확정하지 못한 수치들이다.</p>
+    <ul class="caveat-list">
+      <li>연간 청취율 11%는 '연 1회 이상' 기준. 월간/주간 적극 청취자는 추정 5~7%로 더 작다. 시장 절대 크기가 글로벌 대비 작음을 인정해야 한다.</li>
+      <li>방통위 「2024 방송매체이용행태조사」의 팟캐스트 구체 수치는 원문 PDF 직접 확인 권장 (본 리서치에서 가시화하지 못했다).</li>
+      <li>국내 팟캐스트 광고 시장 단독 규모는 공식 통계 없음. 미국 24억 달러 수치는 한국과 직접 비교 금물.</li>
+      <li>글로벌 시장조사 보고서 간 수치 편차가 크다 (2024년 시장 규모 추정: 190억~270억 달러). 단일 수치 인용 시 출처 명시 필수.</li>
+      <li>경쟁 도서 분석은 Kyobo/Yes24/Aladin 페이지 접근 한계로 리뷰 수·정확한 판매 순위 미확인. 출판 결정 전 출판사가 직접 DB 확인 권장.</li>
+      <li>'국내 신간 입문서 0건'은 부재의 입증이므로 100% 확정 아님. 국립중앙도서관 KOLIS-NET 또는 출판유통진흥원 DB로 최종 확인 권장.</li>
+      <li>AI 콘텐츠 폭증은 양날의 검. NotebookLM 등 '1클릭 팟캐스트 생성'이 가능해진 시점이라, 본격 가이드북 수요가 장기적으로 작아질 위험도 있다. 초판 부수·인쇄 시점에 보수적 접근 권장.</li>
+    </ul>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <p>이지스퍼블리싱 실용/IT 도서팀 내부 기획 자료 · 2025년 5월 · Claude Sonnet 4.6 리서치 지원</p>
+</footer>
+
+</body>
+</html>
