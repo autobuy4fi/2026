@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>2차 — 대리님 수정안 검토</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans KR','Apple SD Gothic Neo',sans-serif;background:#f4f5f7;color:#111;
+ padding:30px 20px 70px;-webkit-font-smoothing:antialiased;line-height:1.75}
+.wrap{max-width:880px;margin:0 auto;background:#fff;border:1px solid #e4e6ea;border-radius:10px;padding:34px 40px 44px}
+.back{display:inline-block;max-width:880px;margin:0 auto 14px;font-size:12.5px;color:#5b6472;text-decoration:none;font-weight:600}
+.back:hover{text-decoration:underline}
+.backwrap{max-width:880px;margin:0 auto}
+h1{font-size:23px;font-weight:900;letter-spacing:-.03em;margin-bottom:6px;line-height:1.4}
+h2{font-size:17px;font-weight:900;letter-spacing:-.025em;margin:34px 0 10px;padding-top:18px;border-top:1px solid #eef0f3}
+h3{font-size:14px;font-weight:800;margin:22px 0 8px;letter-spacing:-.02em}
+p{font-size:14px;margin:10px 0;color:#24292f}
+ul,ol{margin:10px 0 10px 20px;font-size:14px}
+li{margin-bottom:5px}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:14px 0}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid #eef0f3;vertical-align:top;line-height:1.6}
+th{font-weight:700;font-size:11.5px;color:#374151;background:#fafbfc}
+blockquote{border-left:3px solid #d0d7de;padding:2px 0 2px 15px;margin:14px 0;color:#4b5563;font-size:13.5px}
+code{background:#f3f4f6;padding:1px 5px;border-radius:4px;font-size:12.5px}
+hr{border:0;border-top:1px solid #eef0f3;margin:26px 0}
+strong{font-weight:800}
+em{color:#6b7280;font-style:normal;font-size:12.5px}
+</style></head><body>
+<div class="backwrap"><a class="back" href="./">← 목차로</a></div>
+<div class="wrap">
+<h1>2차 검토 — 대리님 수정안</h1>
+<p>핑크펭귄 프레임워크 / 데이터 기준일 2026-08-17 (Yes24 일별, 이지스봇)</p>
+<h2>요약</h2>
+<ul>
+<li><strong>대리님 진단(무엇이 문제인가)은 3건 모두 데이터와 일치합니다.</strong> 특히 "3·4안은 비슷해 보인다"는 바꿔치기 테스트 결과와 정확히 같습니다.</li>
+<li><strong>처방(무엇으로 바꿀 것인가)에서 갈립니다.</strong> 새로 제안된 축 3개(칼퇴 / AI 비서 / 한 권에)는 모두 인접 사례의 판매 성과가 낮습니다.</li>
+<li><strong>그런데 대리님 목록 맨 아래 두 줄이 제출된 전체 안 중 가장 강합니다.</strong> "복사해 쓰면 끝! 오늘 사서 오늘 밤 바로 써먹는" / "책 안의 템플릿만 그대로 따라 쓰면 끝!" — 답이 이미 목록 안에 있는데 초록 박스가 아니라 목록 끝에 놓여 있습니다.</li>
+<li><strong>한 줄 결론</strong>: 초록 박스에 칼퇴 대신 이 두 줄을 올리면 됩니다.</li>
+</ul>
+<hr />
+<h2>1. 대리님 진단 — 데이터와 대조</h2>
+<table>
+<thead>
+<tr>
+<th>대리님 의견</th>
+<th>데이터 검증</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"1안은 제목이랑 겹치는 것 같다"</td>
+<td>제목이 이미 '하루 만에'(시간 축)를 점유. 1안도 시간 축 → 중복 맞음</td>
+<td>✅ <strong>정확</strong></td>
+</tr>
+<tr>
+<td>"2안은 바이브 코딩 책 설명 같다"</td>
+<td>"복잡한 코딩 없이"는 부정형이라 오히려 코딩 카테고리를 불러옴. 클로드 서가 40종 중 절반 이상이 개발서라 이 연상이 특히 강하게 걸림</td>
+<td>✅ <strong>정확, 예리함</strong></td>
+</tr>
+<tr>
+<td>"3·4안은 다른 클로드 책과 비슷하다"</td>
+<td>1차 바꿔치기 테스트에서 두 안 모두 '회색' 판정. 4안은 최악(어떤 AI 책에도 들어감)</td>
+<td>✅ <strong>정확</strong></td>
+</tr>
+<tr>
+<td>"아이콘에 키워드 남기고 카피에선 빼자"</td>
+<td>기능 나열은 클로드 시장 최대 관용구(8종 사용). 카피에서 빼는 건 옳은 판단</td>
+<td>✅ <strong>정확</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>진단 능력은 신뢰할 만합니다. 아래 지적은 방향이 아니라 표현 선택에 대한 것입니다.</strong></p>
+<hr />
+<h2>2. 새로 제안된 축 — 판매 데이터 대조</h2>
+<h3>① "칼퇴 / 퇴근 당기기"</h3>
+<table>
+<thead>
+<tr>
+<th>유사 사례</th>
+<th>판매지수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>퇴근이 빨라지는 제미나이 &amp; 노트북LM 업무 자동화</td>
+<td>2,358</td>
+</tr>
+<tr>
+<td>출근길에 읽고 퇴근길에 완성하는 바이브 코딩</td>
+<td>996</td>
+</tr>
+<tr>
+<td>퇴근을 앞당기는 AI 업무 활용 루틴</td>
+<td>750</td>
+</tr>
+<tr>
+<td>'칼퇴'·'정시 퇴근'을 제목에 쓴 책</td>
+<td><strong>검색 결과 0건</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>'칼퇴'라는 정확한 단어는 사례가 없어 <strong>미개척인지 검증된 실패인지 확정할 수 없습니다.</strong> 다만 인접한 '퇴근' 프레임 3종이 모두 하위권이라는 신호는 부정적입니다.</li>
+<li>더 결정적인 문제는 <strong>대리님이 1안에 적용한 기준이 칼퇴에도 그대로 걸린다</strong>는 점입니다. 제목 "하루 만에"(시간) + 초록 박스 "칼퇴"(시간) = 같은 축 두 번. 1안을 뺀 이유가 여기서 재발합니다.</li>
+<li>"퇴근 2시간 당겨주는"에 대해 대리님이 스스로 단 의심("4시에 퇴근할 순 없는 것처럼")은 타당합니다. 검증 불가능한 수치 약속은 앞서 뺀 "200%"와 같은 문제입니다.</li>
+<li>초록 박스의 <strong>"000가 빨라지는"</strong> 자리도 마찬가지입니다. 숫자를 넣으려면 근거가 있어야 하고, 없으면 숫자 자체를 빼는 편이 신뢰에 낫습니다.</li>
+</ul>
+<h3>② "내 손안의 비밀 AI 비서"</h3>
+<table>
+<thead>
+<tr>
+<th>유사 사례</th>
+<th>판매지수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>유튜브 AI 비서 고용하기 (골든래빗)</td>
+<td>1,482</td>
+</tr>
+<tr>
+<td>누구나 성공하는 AI 비서, 오픈클로 (책밥)</td>
+<td>1,293</td>
+</tr>
+<tr>
+<td><strong>딸깍! 나의 업무 비서 클로드 (위키북스)</strong></td>
+<td><strong>1,197</strong></td>
+</tr>
+<tr>
+<td>내 손안의 1등 비서, 스마트폰 활용 지침서</td>
+<td>60</td>
+</tr>
+</tbody>
+</table>
+<p>'비서' 축은 4종 모두 1,500 이하입니다. 특히 <strong>《딸깍! 나의 업무 비서 클로드》는 같은 클로드·같은 비개발자 업무 활용서</strong>이고 1,197입니다. 이 카피를 쓰면 성적이 낮은 동일 포지션 책과 정면으로 겹칩니다.</p>
+<h3>③ "가입부터 스킬, 코드, 디자인, 코워크까지 한 권에!"</h3>
+<table>
+<thead>
+<tr>
+<th>유사 사례</th>
+<th>판매지수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>클로드 올인원 with 코워크, 코드, 디자인 (한빛)</td>
+<td>3,744</td>
+</tr>
+<tr>
+<td>이게 되네? AI 실무 올인원 미친 활용법 71제 (골든래빗)</td>
+<td>2,505</td>
+</tr>
+<tr>
+<td>한 권으로 끝내는 제미나이 재테크 (한빛)</td>
+<td>2,442</td>
+</tr>
+<tr>
+<td>한 권으로 끝내는 AI 자동화</td>
+<td>618</td>
+</tr>
+<tr>
+<td>클로드 역대급 활용법 with 코워크, 디자인, 코드, 스킬… (영진)</td>
+<td>600</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>'한 권에 / 올인원' 축의 최고 성적이 3,744입니다.</strong> 반면 완결성 축의 실제 1위인 《바로바로 클로드》는 44,649인데, 이 책은 "한 권에"를 쓰지 않습니다. <strong>"바로바로"(즉시성)를 전면에 두고 기능은 with로 뒤에 붙였습니다.</strong></li>
+<li>즉 이 시장에서 이기는 건 '전부 다 들었다'가 아니라 '지금 바로 된다'입니다. 12배 차이입니다.</li>
+<li>게다가 이 문장은 《클로드 올인원 with 코워크, 코드, 디자인》 부제와 사실상 같은 문장입니다. 바꿔치기 테스트를 통과하지 못합니다.</li>
+</ul>
+<h3>④ "프롬프트 짜느라 머리 싸매지 마세요. 그냥 복사하면 끝!"</h3>
+<table>
+<thead>
+<tr>
+<th>유사 사례</th>
+<th>판매지수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>보고서 기획서 30분 만에 끝내주는 프롬프트 책</td>
+<td>2,940</td>
+</tr>
+<tr>
+<td>실무에 바로 쓰는 일잘러의 챗GPT 프롬프트 74가지</td>
+<td>2,610</td>
+</tr>
+<tr>
+<td>바로 쓰는 프롬프트 엔지니어링</td>
+<td>390</td>
+</tr>
+<tr>
+<td>목회사역 AI 프롬프트 모음집</td>
+<td>222</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>'프롬프트 모음집' 포지션은 중하위권입니다. <strong>다만 이 카피는 프롬프트를 파는 게 아니라 "프롬프트 노동을 없애준다"고 말합니다. 방향이 반대라 위 사례와 같이 묶이지 않습니다.</strong></li>
+<li>앞부분("프롬프트 짜느라 머리 싸매지 마세요")은 독자의 실제 불편을 정확히 짚습니다. 뒷부분("그냥 복사하면 끝")은 결과물 축입니다. <strong>네 줄 중 가장 좋습니다.</strong></li>
+<li>초록 박스가 "프롬프트로 칼퇴하자"인 것은 아쉽습니다. 프롬프트를 <strong>주는</strong> 책으로 읽혀서, 성적 낮은 모음집 포지션으로 되돌아갑니다.</li>
+</ul>
+<h3>⑤ 상단 카피 "회사 보고서부터 인스타그램 대본까지! 실생활 밀착 예제 00가지 총망라!"</h3>
+<ul>
+<li><strong>코멘트와 시안이 어긋나 있습니다.</strong> "4안을 상단으로 올렸다"고 쓰셨는데 실제 상단에 올라간 건 6·7안 계열입니다. 확인이 필요합니다.</li>
+<li>"총망라"는 골든래빗·한빛의 관용구입니다(6종 사용). 상단 최상단에 두면 그 책들의 후발주자로 읽힙니다.</li>
+<li>"SNS 콘텐츠 → 인스타그램 대본"으로 좁힌 건 <strong>구체성 면에서 개선</strong>입니다. 다만 회사 보고서 독자와 인스타 대본 독자는 겹치지 않을 수 있어, 한 줄에 둘을 붙이면 "누구 책인지" 신호가 흐려집니다. 참고로 《된다! 조회수 터지는 인스타그램 릴스 만들기》는 4,776으로, 인스타 축 자체가 강한 견인력은 아닙니다.</li>
+<li>"00가지"의 빈 숫자는 확정 후 반드시 채워야 합니다. 개수는 이 시장의 표준 신호입니다(81제·71제·74가지·31제).</li>
+</ul>
+<hr />
+<h2>3. 대리님 안에서 가장 강한 두 줄</h2>
+<blockquote>
+<p><strong>복사해 쓰면 끝! 오늘 사서 오늘 밤 바로 써먹는 실전 모음집</strong><br />
+<strong>복잡한 프롬프트 엔지니어링? 책 안의 템플릿만 그대로 따라 쓰면 끝!</strong></p>
+</blockquote>
+<p>이 두 줄이 제출된 전체 안(1차 7개 + 2차 9개) 중 최고입니다. 이유가 셋입니다.</p>
+<ol>
+<li><strong>바꿔치기 테스트를 통과합니다.</strong> "오늘 사서 오늘 밤 바로"는 다른 클로드 책 띠지에 그대로 옮기기 어렵습니다.</li>
+<li><strong>이 시장에서 실제로 이긴 축(즉시성)에 서 있습니다.</strong> 44,649 vs 3,744의 차이를 만든 그 축입니다.</li>
+<li><strong>아무도 점유하지 않은 축(결과물 소유)을 함께 잡습니다.</strong> 클로드 14종 중 사용 0종입니다.</li>
+</ol>
+<p><strong>그런데 이 두 줄이 목록 맨 아래에 있고, 초록 박스에는 칼퇴가 올라가 있습니다. 자리를 바꾸면 됩니다.</strong></p>
+<p>대리님이 원하신 '독자가 얻는 최상의 이익'도 여기 있습니다. 시간(칼퇴)은 제목이 이미 약속했으니, 하단이 약속할 이익은 <strong>"내가 쓸 수 있는 자산이 남는다"</strong>여야 중복이 안 됩니다.</p>
+<hr />
+<h2>4. 통합 최종안</h2>
+<h3>표지 하단 초록 박스 (택 1)</h3>
+<p><strong>A안 — 즉시성 (가장 안전, 데이터 근거 최강)</strong></p>
+<blockquote>
+<p>복사해 쓰면 끝! 오늘 밤 바로 써먹는 클로드 템플릿 50</p>
+</blockquote>
+<p><strong>B안 — 불편 해소 (대리님 문장 그대로 살림)</strong></p>
+<blockquote>
+<p>프롬프트 짜느라 머리 싸매지 마세요. 책 속 템플릿만 복사하면 끝!</p>
+</blockquote>
+<p><strong>C안 — 이익 명시 (칼퇴를 쓰되 축 중복을 피함)</strong></p>
+<blockquote>
+<p>보고서 쓰는 시간이 아니라, 보고서 쓰는 실력이 남습니다</p>
+</blockquote>
+<p>C안은 대리님의 '인정받는다' 아이디어를 반영한 것입니다. 다만 이 축은 <strong>사례가 없어 검증 불가</strong>임을 밝혀 둡니다.</p>
+<h3>나머지 요소 권고</h3>
+<table>
+<thead>
+<tr>
+<th>요소</th>
+<th>권고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>상단 카피</td>
+<td>"총망라" 삭제 → <strong>"회사 보고서부터 인스타그램 대본까지, 그대로 복사해 쓰는 예제 50"</strong></td>
+</tr>
+<tr>
+<td>말풍선 "책 속 템플릿만 따라 쓰면 끝!"</td>
+<td><strong>그대로 유지.</strong> 초록 박스와 메시지가 맞물려 강해집니다</td>
+</tr>
+<tr>
+<td>아이콘 4개 + 라벨(스킬/코드/디자인/코워크)</td>
+<td><strong>대리님 판단대로 유지하고 카피에서는 완전히 제거.</strong> 검색 노출과 기능 커버는 아이콘이 받고, 문장은 차별화에만 씁니다</td>
+</tr>
+<tr>
+<td>"한 권에" 계열 문장</td>
+<td>표지에서 제외 → 뒤표지·상세페이지로</td>
+</tr>
+<tr>
+<td>"AI 비서" 계열</td>
+<td>제외 (동일 포지션 클로드 책이 1,197)</td>
+</tr>
+<tr>
+<td>"000가 빨라지는"</td>
+<td>근거 있는 숫자가 없으면 숫자 자체를 삭제</td>
+</tr>
+<tr>
+<td>띠지</td>
+<td>시리즈 실적 명기 — 챗GPT·제미나이 편 Yes24 IT 일별 <strong>1위</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>5. 셀링 관점 최종 점검</h2>
+<ol>
+<li>수정안은 1차 대비 <strong>"200%"가 빠진 대신 "2시간"·"000가"가 들어와</strong> 검증 불가 수치가 그대로 남았습니다. 숫자는 실측 가능한 것(예제 개수)만 남기시길 권합니다.</li>
+<li><strong>"칼퇴 보장"의 '보장'은 출판사가 지킬 수 없는 약속</strong>입니다. 같은 이익을 "보장" 없이 말할 수 있으면 신뢰가 올라갑니다.</li>
+<li>표지 문장 수가 늘었습니다(상단 2줄 + 초록 1줄 + 말풍선 1줄 + 아이콘 4라벨). <strong>매대에서 읽히는 건 두 줄입니다.</strong> 초록 박스 한 줄에 힘을 몰아주는 편이 낫습니다.</li>
+</ol>
+<hr />
+<p><em>데이터 출처: 이지스봇 — Yes24 IT/모바일 일별 베스트 및 판매지수(2026-08-17 기준). '칼퇴'·'인정받는다' 축은 비교 사례가 확보되지 않아 판단을 유보했으며, 수치를 추정해 채우지 않았습니다.</em></p>
+</div></body></html>

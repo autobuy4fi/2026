@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>경쟁서 비교분석 — 바로바로 클로드 vs 누구나 아는 나만 모르는 클로드</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+.viz-root{
+  color-scheme:light;
+  --surface-1:#fcfcfb;
+  --text-primary:#0b0b0b;
+  --text-secondary:#52514e;
+  --text-muted:#8a8880;
+  --grid:#e6e5e0;
+  --series-1:#2a78d6;
+  --series-2:#eb6834;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  background:#f4f5f7;color:#0b0b0b;padding:34px 22px 70px;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto}
+h1{font-size:22px;font-weight:900;letter-spacing:-.025em}
+.sub{margin-top:8px;font-size:13px;color:#6b7280;line-height:1.7}
+section{background:#fff;border:1px solid #e4e6ea;border-radius:10px;padding:24px 26px;margin-top:20px}
+h2{font-size:15.5px;font-weight:900;letter-spacing:-.02em;margin-bottom:6px}
+h2 .n{color:#9aa1ab;font-weight:700;margin-right:7px}
+.lead{font-size:12.5px;color:#6b7280;line-height:1.7;margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{text-align:left;padding:10px;border-bottom:1px solid #eef0f3;vertical-align:top;line-height:1.6}
+th{font-weight:700;font-size:11.5px;color:#374151;background:#fafbfc;white-space:nowrap}
+td.b1{color:#2a78d6;font-weight:600}
+td.b2{color:#c9531f;font-weight:600}
+.mut{color:#6b7280}
+.key{background:#fffbe8}
+/* stat tiles */
+.tiles{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.tile{flex:1 1 150px;border:1px solid #e8eaee;border-radius:8px;padding:13px 14px;background:#fcfcfb}
+.tile .lab{font-size:10.5px;color:#8a8880;font-weight:700;letter-spacing:-.01em}
+.tile .val{font-size:24px;font-weight:900;letter-spacing:-.03em;margin-top:5px;line-height:1}
+.tile .val small{font-size:12px;font-weight:700;margin-left:2px}
+.tile .note{font-size:10.5px;color:#6b7280;margin-top:6px;line-height:1.5}
+.tile.s1 .val{color:#2a78d6}
+.tile.s2 .val{color:#c9531f}
+/* chart */
+.viz-root{background:var(--surface-1);border:1px solid #e8eaee;border-radius:8px;padding:16px 14px 8px;position:relative}
+.legend{display:flex;gap:16px;align-items:center;margin:0 0 10px 8px;font-size:11.5px;color:var(--text-secondary);font-weight:600}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+svg{display:block;width:100%;height:auto;overflow:visible}
+.tt{position:absolute;pointer-events:none;background:#111;color:#fff;font-size:11px;font-weight:600;
+    padding:7px 9px;border-radius:6px;opacity:0;transition:opacity .1s;white-space:nowrap;line-height:1.5;z-index:5}
+.tt .r{color:#ffd84d}
+.cap{font-size:11px;color:#6b7280;margin-top:11px;line-height:1.65}
+details{margin-top:12px}
+summary{font-size:11.5px;color:#4b5563;cursor:pointer;font-weight:600}
+details table{margin-top:9px;font-size:11.5px}
+.callout{background:#f7f9fc;border-left:3px solid #2a78d6;border-radius:0 6px 6px 0;padding:13px 15px;margin-top:14px;font-size:12.5px;line-height:1.75}
+.callout b{font-weight:800}
+.callout.warn{background:#fff8f4;border-left-color:#eb6834}
+.foot{margin-top:18px;font-size:11px;color:#8a8880;line-height:1.7;border-top:1px solid #eef0f3;padding-top:13px}
+ul{margin:8px 0 0 17px;font-size:12.5px;line-height:1.85}
+li{margin-bottom:5px}
+@media (max-width:760px){ .tile{flex:1 1 44%} }
+</style>
+</head>
+<body>
+<div class="wrap"><a href="./" style="display:inline-block;margin-bottom:14px;font-size:12.5px;color:#5b6472;text-decoration:none;font-weight:600">← 목차로</a>
+
+<h1>경쟁서 비교분석 — 《바로바로 클로드》 vs 《누구나 아는 나만 모르는 클로드》</h1>
+<p class="sub">카피·포지셔닝 중심 · 이지스봇 Yes24 일별 데이터(2026-08-17 기준) · 핑크펭귄 프레임워크</p>
+
+<!-- 1 -->
+<section>
+  <h2><span class="n">01</span>세 줄 요약</h2>
+  <ul>
+    <li><b>두 책은 전혀 다른 무기로 이겼습니다.</b> 바로바로는 <b>책 자체</b>(선점 + 실습량 + 즉시성), 누구나는 <b>저자 채널</b>(유튜브 50만 + 무료 강의 10개)입니다.</li>
+    <li><b>둘 다 순위를 출간 2주 전에 만들었습니다.</b> 바로바로 D-14 19위, 누구나 D-13 50위 → D-1 2위. 이 시장의 순위는 출간일이 아니라 <b>예약 시작일</b>에 결정됩니다.</li>
+    <li><b>우리가 잡으려던 '템플릿' 축은 이미 바로바로 표지에 있습니다</b> — 다만 하단 배지 하나로만 있습니다. 우리는 그걸 <b>메인 약속으로 올리는 것</b>이 차별점입니다.</li>
+  </ul>
+</section>
+
+<!-- 2 -->
+<section>
+  <h2><span class="n">02</span>출시 궤적 — 순위는 언제 만들어졌나</h2>
+  <p class="lead">출간일(D0)을 0으로 맞춰 정렬한 Yes24 IT/모바일 일별 순위입니다. 세로축은 로그 눈금이며 위로 갈수록 상위입니다.</p>
+
+  <div class="tiles">
+    <div class="tile s1"><div class="lab">바로바로 · 예약 구간 최고</div><div class="val">3<small>위</small></div><div class="note">출간 3일 전(5/17)</div></div>
+    <div class="tile s1"><div class="lab">바로바로 · 첫 1위</div><div class="val">D+29</div><div class="note">이후 48일간 최저 3위</div></div>
+    <div class="tile s2"><div class="lab">누구나 · 예약 구간 최고</div><div class="val">2<small>위</small></div><div class="note">출간 1일 전(8/13)</div></div>
+    <div class="tile s2"><div class="lab">누구나 · 출간 후 최고</div><div class="val">4<small>위</small></div><div class="note">D+1. 아직 D+3이라 판단 유보</div></div>
+  </div>
+
+  <div class="viz-root" id="viz">
+    <div class="legend">
+      <span><i style="background:var(--series-1)"></i>바로바로 클로드</span>
+      <span><i style="background:var(--series-2)"></i>누구나 아는 나만 모르는 클로드</span>
+    </div>
+    <svg id="chart" viewBox="0 0 900 330" role="img" aria-label="출간일 기준 순위 궤적 비교"></svg>
+    <div class="tt" id="tt"></div>
+  </div>
+
+  <div class="callout">
+    <b>읽는 법 하나.</b> 바로바로는 출간 후에도 계속 올라가 D+29에 첫 1위를 찍었고, D+42(7/1) 이후 48일 동안 <b>한 번도 3위 밖으로 나가지 않았습니다</b>. 판매지수도 37,869(7/10) → 46,767(8/12)로 우상향입니다 — <b>입소문형 곡선</b>입니다.
+    반면 누구나는 <b>출간 전날 2위가 정점</b>이고 출간 후에는 4~7위 박스권입니다. 예약 구간에 저자 채널 화력이 집중됐다는 신호입니다. 다만 아직 출간 4일차라 최종 판단은 이릅니다.
+  </div>
+
+  <div class="callout warn">
+    <b>우리 쪽 대비.</b> 자사 《된다! 하루 만에 끝내는 제미나이 활용법》 개정판(9/1 출간 예정)의 예약 구간 순위는 <b>최고 21위, 대부분 40~110위</b>입니다.
+    두 경쟁서가 예약 구간에 이미 2~3위를 찍은 것과 화력 차이가 큽니다. <b>이건 카피 문제가 아니라 출간 전 마케팅 배분 문제</b>입니다.
+  </div>
+
+  <details>
+    <summary>원데이터 보기 (일자별 순위)</summary>
+    <table id="dataTable"></table>
+  </details>
+</section>
+
+<!-- 3 -->
+<section>
+  <h2><span class="n">03</span>표지 카피 구조 분해</h2>
+  <p class="lead">같은 자리에 두 책이 무엇을 넣었는지 나란히 놓았습니다.</p>
+  <table>
+    <thead><tr><th style="width:13%">자리</th><th style="width:29%">바로바로 클로드</th><th style="width:29%">누구나 아는 나만 모르는 클로드</th><th>차이가 뜻하는 것</th></tr></thead>
+    <tbody>
+      <tr><td>최상단</td><td class="b1">바로 배워 바로 쓰는!</td><td class="b2">(없음)</td><td class="mut">바로바로는 제목을 <b>해설하는</b> 한 줄을 위에 뒀습니다. 제목이 형용사라 뜻을 고정해줄 문장이 필요했던 것.</td></tr>
+      <tr class="key"><td>제목</td><td class="b1">바로바로 클로드</td><td class="b2">누구나 아는 나만 모르는 클로드</td><td class="mut"><b>축이 완전히 다릅니다.</b> 바로바로는 <b>속도</b>를 약속하고, 누구나는 약속 대신 <b>감정</b>(나만 뒤처졌다)을 건드립니다.</td></tr>
+      <tr><td>부제</td><td class="b1">with 코워크, 스킬, 클로드 코드, 디자인</td><td class="b2">세상에서 가장 쉬운 클로드&amp;바이브 코딩 입문서</td><td class="mut">바로바로는 <b>범위</b>를, 누구나는 <b>난이도</b>를 부제에서 처리했습니다. 둘 다 제목에서 못 한 말을 부제로 보냈습니다.</td></tr>
+      <tr><td>키워드</td><td class="b1">박스 8개 — 에이전트·커넥터·플러그인·아티팩트·스케줄링·디스패치·하네스 등</td><td class="b2">세로 10개 — Claude·Vibe coding·프롬프트·스킬·아티팩트·클로드 코드·MS 오피스·클로드 디자인·코워크·커넥터</td><td class="mut">둘 다 커버리지를 <b>증명</b>합니다. 중요한 건 위치 — <b>둘 다 제목이 아니라 보조 자리</b>에 뒀습니다.</td></tr>
+      <tr class="key"><td>배지</td><td class="b1">62가지 실습 · 보너스 실습 자료 · <b>프롬프트 복붙 세트</b></td><td class="b2"><b>유튜브 구독자 50만 누나IT</b> · 무료 강의 10개</td><td class="mut">여기가 진짜 승부처입니다. 바로바로는 <b>실습량+부록</b>, 누구나는 <b>저자 권위+강의</b>. 성격이 정반대입니다.</td></tr>
+      <tr><td>정가</td><td class="b1">28,000원</td><td class="b2">20,000원</td><td class="mut">후발주자가 <b>71% 가격</b>으로 진입했습니다. 신간의 전형적인 진입 전략입니다.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 4 -->
+<section>
+  <h2><span class="n">04</span>약속 유형 — 어느 축을 잡았나</h2>
+  <table>
+    <thead><tr><th style="width:16%">약속 유형</th><th style="width:26%">바로바로</th><th style="width:26%">누구나</th><th>우리 책</th></tr></thead>
+    <tbody>
+      <tr><td>속도·즉시성</td><td class="b1">★ 메인 (제목 + 최상단)</td><td class="mut">—</td><td>제목 '하루 만에'가 점유</td></tr>
+      <tr><td>난이도</td><td class="mut">보조 (AI 입문서)</td><td class="b2">★ 메인 (세상에서 가장 쉬운)</td><td class="mut">의도적으로 비움 — 시리즈가 대신함</td></tr>
+      <tr><td>완결성·범위</td><td class="b1">★ 강함 (키워드 8 + 62가지)</td><td class="b2">중간 (키워드 10)</td><td class="mut">아이콘 5개로 최소화</td></tr>
+      <tr><td>권위</td><td class="mut">약함 (선발주자라는 사실뿐)</td><td class="b2">★ 메인 (유튜브 50만)</td><td>띠지 — 시리즈 1위 실적</td></tr>
+      <tr><td>부록</td><td class="b1">보너스 자료 · 프롬프트 복붙 세트</td><td class="b2">무료 강의 10개</td><td class="mut"><b>현재 없음 ← 보완 필요</b></td></tr>
+      <tr class="key"><td>결과물 소유</td><td class="mut">배지 한 줄 (프롬프트 복붙 세트)</td><td class="mut">—</td><td><b>★ 메인 (템플릿 50개)</b></td></tr>
+      <tr><td>감정·불안</td><td class="mut">—</td><td class="b2">★ 제목 자체 (나만 모른다)</td><td class="mut">—</td></tr>
+    </tbody>
+  </table>
+  <div class="callout">
+    <b>우리 자리는 여전히 비어 있습니다.</b> '결과물 소유'를 <b>메인 약속</b>으로 세운 책은 두 권 모두 아닙니다.
+    바로바로가 '프롬프트 복붙 세트'를 갖고 있지만 하단 배지 한 줄이고, 표지가 파는 것은 어디까지나 '바로바로'(속도)입니다.
+    다만 <b>이건 선점이 아니라 시간 싸움</b>입니다 — 재쇄나 개정판에서 그 배지를 위로 올리면 우리 자리가 사라집니다.
+  </div>
+</section>
+
+<!-- 5 -->
+<section>
+  <h2><span class="n">05</span>그래서 왜 잘됐나</h2>
+  <table>
+    <thead><tr><th style="width:12%"></th><th style="width:44%">바로바로 클로드</th><th>누구나 아는 나만 모르는 클로드</th></tr></thead>
+    <tbody>
+      <tr><td>1위 요인</td><td class="b1"><b>선점.</b> 5/20 출간으로 비개발자용 클로드 입문서 중 사실상 첫 책. 예약 D-14부터 이미 30위권.</td><td class="b2"><b>채널.</b> 유튜브 50만 구독자가 예약 구간에 그대로 전환. D-13 50위 → D-7 4위, 6일 만에 46계단.</td></tr>
+      <tr><td>2위 요인</td><td class="b1"><b>제목이 곧 약속.</b> '바로바로'는 형용사가 아니라 독자가 사려는 상태입니다. 클로드 서가 대부분이 개발서인 상황에서 "지금 바로 쓴다"는 신호가 강하게 작동.</td><td class="b2"><b>제목이 곧 감정.</b> "누구나 아는데 나만 모른다"는 약속이 아니라 진단입니다. 사지 않으면 뒤처진다는 압력을 만듭니다.</td></tr>
+      <tr><td>3위 요인</td><td class="b1"><b>실습량 증명.</b> 62가지 + 보너스 자료 + 복붙 세트. 28,000원이라는 높은 가격을 정당화합니다.</td><td class="b2"><b>번들.</b> 무료 강의 10개를 20,000원에 붙였습니다. 가격 대비 체감 가치가 큽니다.</td></tr>
+      <tr><td>지속성</td><td class="b1">출간 89일차인 지금도 1~2위. D+42 이후 최저 3위, 판매지수 우상향. <b>책이 팔고 있습니다.</b></td><td class="b2">출간 전날이 정점, 이후 4~7위. <b>채널이 팔았고 이제 책이 이어받아야 합니다.</b> 앞으로 2~3주가 관건.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 6 -->
+<section>
+  <h2><span class="n">06</span>우리 책에 주는 것</h2>
+  <ul>
+    <li><b>예약판매를 최소 2주 잡고 거기에 화력을 몰아야 합니다.</b> 두 책 모두 출간 전에 순위를 완성했습니다. 자사 제미나이 개정판 예약이 40~110위대인 건 이 구간 투자가 부족하다는 뜻입니다.</li>
+    <li><b>표지에 부록 배지가 필요합니다.</b> 두 책 다 갖고 있고 우리 시안엔 없습니다. '템플릿 50개 파일 제공' 같은 형태면 메인 카피와 메시지가 겹쳐 더 강해집니다.</li>
+    <li><b>저자 채널이 없다면 바로바로 모델로 가야 합니다.</b> 누구나 모델(채널 화력)은 복제할 수 없습니다. 바로바로 모델의 재료는 <b>실습량 + 부록 + 즉시성</b>이고, 셋 다 우리가 만들 수 있습니다.</li>
+    <li><b>가격은 20,000~21,000원이 맞습니다.</b> 시리즈 기존가(20,000)와 누구나(20,000)에 맞고, 바로바로(28,000) 대비 진입 장벽이 낮습니다.</li>
+    <li><b>제목 축은 겹치지 않습니다.</b> 바로바로=속도, 누구나=감정, 우리=시간+결과물. 셋이 매대에 나란히 놓여도 서로 다른 말을 합니다. 이건 좋은 신호입니다.</li>
+    <li class="mut"><b>다만 '결과물 소유' 자리는 시한부입니다.</b> 바로바로가 배지로 이미 갖고 있어서, 개정 시 위로 올리면 사라집니다. 빨리 가져가는 편이 낫습니다.</li>
+  </ul>
+</section>
+
+<div class="foot">
+  데이터 출처: 이지스봇 — Yes24 IT/모바일 일별 베스트 및 판매지수(2026-08-17 기준). 순위는 전일 판매 기준입니다.<br>
+  실판매부수(Yes24·교보)는 자사 도서만 수집되므로 두 경쟁서는 <b>부수 데이터가 없습니다</b> — 판매지수와 순위로만 판단했습니다.<br>
+  《누구나 아는 나만 모르는 클로드》는 출간 4일차라 지속성 판단은 유보했습니다. 누락일: 8/4(누구나) 순위 미수집.<br>
+  표지 카피는 제공해 주신 이미지에서 읽은 것이며, 실물 표지와 다를 수 있습니다.
+</div>
+
+</div>
+
+<script>
+const BR = {"-14":19,"-13":23,"-12":32,"-11":13,"-10":8,"-9":8,"-8":11,"-7":7,"-6":15,"-5":7,"-4":3,"-3":3,"-2":4,"-1":3,"0":4,"1":4,"2":5,"3":2,"4":6,"5":6,"6":4,"7":5,"8":4,"9":4,"10":4,"11":12,"12":7,"13":4,"14":4,"15":3,"16":3,"17":4,"18":3,"19":5,"20":5};
+const NG = {"-13":50,"-12":73,"-11":42,"-9":11,"-8":8,"-7":4,"-6":4,"-5":6,"-4":7,"-3":6,"-2":15,"-1":2,"0":7,"1":4,"2":5,"3":6};
+const DATE0 = {BR:new Date(2026,4,20), NG:new Date(2026,7,14)};
+
+const W=900,H=330,M={t:16,r:118,b:38,l:44};
+const x0=-14,x1=20;
+const rankTicks=[1,3,10,30,100];
+const X=d=>M.l+(d-x0)/(x1-x0)*(W-M.l-M.r);
+const Y=r=>M.t+(Math.log(r)/Math.log(100))*(H-M.t-M.b);
+
+const svg=document.getElementById('chart');
+const NS='http://www.w3.org/2000/svg';
+const el=(n,a)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e;};
+
+// grid
+rankTicks.forEach(r=>{
+  svg.appendChild(el('line',{x1:M.l,x2:W-M.r,y1:Y(r),y2:Y(r),stroke:'#e6e5e0','stroke-width':1}));
+  const t=el('text',{x:M.l-9,y:Y(r)+4,'text-anchor':'end','font-size':10.5,fill:'#8a8880','font-weight':600});
+  t.textContent=r+'위'; svg.appendChild(t);
+});
+// x axis
+for(let d=x0;d<=x1;d++){
+  if(d%7!==0 && d!==x0) continue;
+  svg.appendChild(el('line',{x1:X(d),x2:X(d),y1:M.t,y2:H-M.b,stroke:'#f0efeb','stroke-width':1}));
+  const t=el('text',{x:X(d),y:H-M.b+17,'text-anchor':'middle','font-size':10.5,fill:'#8a8880','font-weight':600});
+  t.textContent=(d===0?'출간일':(d>0?'D+'+d:'D'+d)); svg.appendChild(t);
+}
+// launch line
+svg.appendChild(el('line',{x1:X(0),x2:X(0),y1:M.t-6,y2:H-M.b,stroke:'#0b0b0b','stroke-width':1.5,'stroke-dasharray':'4 3',opacity:.5}));
+
+function draw(data,color,label,yNudge){
+  const pts=Object.keys(data).map(Number).sort((a,b)=>a-b).filter(d=>d>=x0&&d<=x1).map(d=>[d,data[d]]);
+  const path=pts.map((p,i)=>(i?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1)).join(' ');
+  svg.appendChild(el('path',{d:path,fill:'none',stroke:color,'stroke-width':2,'stroke-linejoin':'round','stroke-linecap':'round'}));
+  pts.forEach(p=>{
+    svg.appendChild(el('circle',{cx:X(p[0]),cy:Y(p[1]),r:3.4,fill:color,stroke:'var(--surface-1)','stroke-width':2}));
+    const hit=el('circle',{cx:X(p[0]),cy:Y(p[1]),r:11,fill:'transparent',style:'cursor:pointer'});
+    hit.addEventListener('mouseenter',e=>showTT(e,label,p[0],p[1],color));
+    hit.addEventListener('mouseleave',hideTT);
+    svg.appendChild(hit);
+  });
+  const last=pts[pts.length-1];
+  const lb=el('text',{x:X(last[0])+9,y:Y(last[1])+4+(yNudge||0),'font-size':11,fill:color,'font-weight':800,stroke:'var(--surface-1)','stroke-width':3.5,'paint-order':'stroke'});
+  lb.textContent=label; svg.appendChild(lb);
+}
+draw(NG,'#eb6834','누구나',26);
+draw(BR,'#2a78d6','바로바로',4);
+
+const tt=document.getElementById('tt'), viz=document.getElementById('viz');
+function showTT(e,label,d,r,color){
+  const base=label.indexOf('바로바로')===0?DATE0.BR:DATE0.NG;
+  const dt=new Date(base.getTime()+d*86400000);
+  const ds=(dt.getMonth()+1)+'/'+dt.getDate();
+  tt.innerHTML=label+' · '+ds+'<br><span class="r">'+r+'위</span> · '+(d===0?'출간일':(d>0?'D+'+d:'D'+d));
+  const b=viz.getBoundingClientRect(), t=e.target.getBoundingClientRect();
+  tt.style.left=(t.left-b.left+t.width/2-tt.offsetWidth/2)+'px';
+  tt.style.top=(t.top-b.top-tt.offsetHeight-6)+'px';
+  tt.style.opacity=1;
+}
+function hideTT(){tt.style.opacity=0;}
+
+// table view
+const days=[...new Set([...Object.keys(BR),...Object.keys(NG)].map(Number))].sort((a,b)=>a-b).filter(d=>d>=x0&&d<=x1);
+let html='<thead><tr><th>기준일</th><th>바로바로</th><th>누구나</th></tr></thead><tbody>';
+days.forEach(d=>{html+='<tr><td>'+(d===0?'출간일':(d>0?'D+'+d:'D'+d))+'</td><td>'+(BR[d]?BR[d]+'위':'—')+'</td><td>'+(NG[d]?NG[d]+'위':'—')+'</td></tr>';});
+document.getElementById('dataTable').innerHTML=html+'</tbody>';
+</script>
+</body>
+</html>

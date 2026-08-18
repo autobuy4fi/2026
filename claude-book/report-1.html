@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>1차 — 핑크펭귄 진단</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans KR','Apple SD Gothic Neo',sans-serif;background:#f4f5f7;color:#111;
+ padding:30px 20px 70px;-webkit-font-smoothing:antialiased;line-height:1.75}
+.wrap{max-width:880px;margin:0 auto;background:#fff;border:1px solid #e4e6ea;border-radius:10px;padding:34px 40px 44px}
+.back{display:inline-block;max-width:880px;margin:0 auto 14px;font-size:12.5px;color:#5b6472;text-decoration:none;font-weight:600}
+.back:hover{text-decoration:underline}
+.backwrap{max-width:880px;margin:0 auto}
+h1{font-size:23px;font-weight:900;letter-spacing:-.03em;margin-bottom:6px;line-height:1.4}
+h2{font-size:17px;font-weight:900;letter-spacing:-.025em;margin:34px 0 10px;padding-top:18px;border-top:1px solid #eef0f3}
+h3{font-size:14px;font-weight:800;margin:22px 0 8px;letter-spacing:-.02em}
+p{font-size:14px;margin:10px 0;color:#24292f}
+ul,ol{margin:10px 0 10px 20px;font-size:14px}
+li{margin-bottom:5px}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:14px 0}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid #eef0f3;vertical-align:top;line-height:1.6}
+th{font-weight:700;font-size:11.5px;color:#374151;background:#fafbfc}
+blockquote{border-left:3px solid #d0d7de;padding:2px 0 2px 15px;margin:14px 0;color:#4b5563;font-size:13.5px}
+code{background:#f3f4f6;padding:1px 5px;border-radius:4px;font-size:12.5px}
+hr{border:0;border-top:1px solid #eef0f3;margin:26px 0}
+strong{font-weight:800}
+em{color:#6b7280;font-style:normal;font-size:12.5px}
+</style></head><body>
+<div class="backwrap"><a class="back" href="./">← 목차로</a></div>
+<div class="wrap">
+<h1>《된다! 하루 만에 끝내는 클로드 활용법》 표지 시안·카피 진단</h1>
+<p>핑크펭귄 프레임워크 / 데이터 기준일 2026-08-17 (Yes24 일별, 이지스봇)</p>
+<h2>진단 요약</h2>
+<ul>
+<li><strong>경쟁 세트</strong>: 클로드 단행본 14종 + 대체 경쟁(챗GPT·제미나이 통합서) 3종 + 자사 시리즈 4종 — 이지스봇 실판매지수 기준</li>
+<li><strong>펭귄 판정</strong>: <strong>제목은 핑크, 하단·부속 카피는 회색</strong></li>
+<li><strong>가장 큰 문제</strong>: 제목이 확보한 차별점을 하단 카피 7개가 전부 되돌려놓는다. "활용서/입문서/첫걸음/200%"는 클로드 시장 관용구다</li>
+<li><strong>가장 큰 기회</strong>: 표지에서 가장 작게 놓인 말풍선 "책 속 템플릿을 따라 써보세요!" 안에 빅아이디어가 이미 들어 있다</li>
+</ul>
+<hr />
+<h2>0. 경쟁 지형</h2>
+<h3>직접 경쟁 — 클로드 단행본 (2026-08-17 일별 판매지수)</h3>
+<table>
+<thead>
+<tr>
+<th>도서명</th>
+<th>출판사</th>
+<th>출간</th>
+<th>최고순위</th>
+<th>판매지수</th>
+<th>핵심 축</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>바로바로 클로드 with 코워크, 스킬, 클로드 코드, 디자인</td>
+<td>골든래빗</td>
+<td>26-05</td>
+<td><strong>1위</strong></td>
+<td>44,649</td>
+<td>완결성+기능 나열</td>
+</tr>
+<tr>
+<td>클로드 코드 제대로 시작하기</td>
+<td>길벗</td>
+<td>26-08</td>
+<td><strong>1위</strong></td>
+<td>12,918</td>
+<td>개발자</td>
+</tr>
+<tr>
+<td>클로드 코워크 with 스킬, 플러그인</td>
+<td>한빛</td>
+<td>26-03</td>
+<td>21위</td>
+<td>11,229</td>
+<td>기능</td>
+</tr>
+<tr>
+<td>누구나 아는 나만 모르는 클로드</td>
+<td>한빛</td>
+<td>26-08-14</td>
+<td>2위</td>
+<td>7,212</td>
+<td>난이도</td>
+</tr>
+<tr>
+<td>클로드 올인원 with 코워크, 코드, 디자인</td>
+<td>한빛</td>
+<td>26-06</td>
+<td>5위</td>
+<td>3,744</td>
+<td>완결성</td>
+</tr>
+<tr>
+<td>AI 대세전환 클로드 코워크×AI 자동화</td>
+<td>프리렉</td>
+<td>26-07</td>
+<td>11위</td>
+<td>3,498</td>
+<td>성과</td>
+</tr>
+<tr>
+<td>뚝딱 바로 써먹는 첫 클로드</td>
+<td>안경다리</td>
+<td>26-07</td>
+<td>6위</td>
+<td>3,327</td>
+<td>난이도+속도</td>
+</tr>
+<tr>
+<td>이게 되네? 클로드 MCP 커넥터 미친 활용법 31제</td>
+<td>골든래빗</td>
+<td>26-06</td>
+<td>23위</td>
+<td>1,716</td>
+<td>완결성(제수)</td>
+</tr>
+<tr>
+<td>클로드 코워크 시작하기</td>
+<td>비엘북스</td>
+<td>26-07</td>
+<td>18위</td>
+<td>1,704</td>
+<td>입문</td>
+</tr>
+<tr>
+<td>클로드 코워크</td>
+<td>생능북스</td>
+<td>26-06</td>
+<td>13위</td>
+<td>1,572</td>
+<td>기능</td>
+</tr>
+<tr>
+<td>딸깍! 나의 업무 비서 클로드 with 엑셀, 파워포인트</td>
+<td>위키북스</td>
+<td>26-07</td>
+<td>19위</td>
+<td>1,197</td>
+<td>업무</td>
+</tr>
+<tr>
+<td>이런 거야 클로드 데스크톱</td>
+<td>리코멘드</td>
+<td>26-08</td>
+<td>26위</td>
+<td>1,014</td>
+<td>입문</td>
+</tr>
+<tr>
+<td>클로드 역대급 활용법 with 코워크, 디자인, 코드…</td>
+<td>영진닷컴</td>
+<td>26-08-21</td>
+<td>18위</td>
+<td>600</td>
+<td>완결성</td>
+</tr>
+<tr>
+<td>요즘 일잘러를 위한 클로드 콘텐츠 자동화</td>
+<td>길벗</td>
+<td>26-08-24</td>
+<td>59위</td>
+<td>120</td>
+<td>직무</td>
+</tr>
+</tbody>
+</table>
+<p>Yes24 검색 40종 중 <strong>절반 이상이 클로드 코드·바이브 코딩·에이전트·MCP 계열</strong>이다. 즉 클로드 서가는 개발자 책이 점령하고 있고, 비개발자 업무 활용서는 위 표의 아래쪽 소수다.</p>
+<h3>대체 경쟁 — 같은 독자가 같은 날 함께 보는 책</h3>
+<table>
+<thead>
+<tr>
+<th>도서명</th>
+<th>출판사</th>
+<th>판매지수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>이게 되네? 제미나이 완전 미친 활용법 81제</td>
+<td>골든래빗</td>
+<td>70,548</td>
+</tr>
+<tr>
+<td>뚝딱 바로 써먹는 AI 3대장 챗GPT·제미나이·클로드</td>
+<td>안경다리</td>
+<td>23,604</td>
+</tr>
+<tr>
+<td>챗GPT·제미나이·클로드까지 모두를 위한 AI</td>
+<td>시프트</td>
+<td>12,273</td>
+</tr>
+</tbody>
+</table>
+<h3>자사 시리즈 — 이 책의 가장 강력한 근거</h3>
+<table>
+<thead>
+<tr>
+<th>도서명</th>
+<th>출간</th>
+<th>역대 최고순위</th>
+<th>판매지수</th>
+<th>최근 30일 실판매(Yes24/교보)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>된다! 하루 만에 끝내는 제미나이 활용법</td>
+<td>25-11</td>
+<td><strong>1위</strong></td>
+<td>74,526</td>
+<td>102 / 101부</td>
+</tr>
+<tr>
+<td>된다! 하루 만에 끝내는 챗GPT 활용법</td>
+<td>25-06</td>
+<td><strong>1위</strong></td>
+<td>28,059</td>
+<td>83 / 126부</td>
+</tr>
+<tr>
+<td>된다! 하루 만에 준비하는 AI 학교 수업 활용법</td>
+<td>25-03</td>
+<td>4위</td>
+<td>17,178</td>
+<td>64 / 12부</td>
+</tr>
+<tr>
+<td>된다! 하루 만에 만드는 AI 사진 &amp; 이미지</td>
+<td>25-08</td>
+<td>13위</td>
+<td>4,068</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>이 표가 이번 진단의 전제를 바꾼다.</strong> 제목 "된다! 하루 만에 끝내는 ○○ 활용법"은 이미 두 번 1위를 찍은 자산이다. 여기서 벗어나라는 조언은 데이터에 반한다.</p>
+<hr />
+<h2>1. 경쟁 카피 해부</h2>
+<h3>약속 유형 점유 현황 (클로드 세트)</h3>
+<table>
+<thead>
+<tr>
+<th>약속 유형</th>
+<th>사용 도서</th>
+<th>최고 판매지수</th>
+<th>포화도</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>완결성(올인원·역대급·총망라·○제)</td>
+<td>6종</td>
+<td>44,649</td>
+<td><strong>포화</strong></td>
+<td>1위 도서가 점령. 정면 승부 불리</td>
+</tr>
+<tr>
+<td>기능 나열(코워크·스킬·MCP·플러그인)</td>
+<td>8종</td>
+<td>44,649</td>
+<td><strong>포화</strong></td>
+<td>사실상 클로드 시장 관용구</td>
+</tr>
+<tr>
+<td>난이도(누구나·뚝딱·딸깍·비개발자)</td>
+<td>5종</td>
+<td>7,212</td>
+<td>포화</td>
+<td>신간 진입로로만 유효</td>
+</tr>
+<tr>
+<td>개발/코딩</td>
+<td>20종+</td>
+<td>12,918</td>
+<td>포화</td>
+<td>우리 독자와 무관</td>
+</tr>
+<tr>
+<td><strong>속도·시간(하루·분 단위)</strong></td>
+<td>1종(10분 Claude MCP, 1,320)</td>
+<td>—</td>
+<td><strong>비어 있음</strong></td>
+<td>클로드에선 미개척, <strong>자사가 타 주제에서 검증 완료</strong></td>
+</tr>
+<tr>
+<td><strong>결과물 소유(템플릿·내 자산)</strong></td>
+<td>0종</td>
+<td>—</td>
+<td><strong>완전히 비어 있음</strong></td>
+<td>미개척</td>
+</tr>
+</tbody>
+</table>
+<h3>검증된 실패 경고 — "퇴근"</h3>
+<table>
+<thead>
+<tr>
+<th>도서</th>
+<th>판매지수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>퇴근이 빨라지는 제미나이 &amp; 노트북LM 업무 자동화</td>
+<td>2,358</td>
+</tr>
+<tr>
+<td>출근길에 읽고 퇴근길에 완성하는 바이브 코딩</td>
+<td>996</td>
+</tr>
+<tr>
+<td>퇴근을 앞당기는 AI 업무 활용 루틴</td>
+<td>750</td>
+</tr>
+</tbody>
+</table>
+<p>"퇴근" 프레임은 세 번 시도돼 세 번 다 하위권이다. 반면 "하루 만에"는 74,526 / 28,059다.<br />
+→ <strong>카피 2안의 "퇴근 후 3시간"은 검증된 실패 축이다.</strong> 게다가 제목의 "하루 만에"와 숫자가 충돌한다(하루냐 3시간이냐).</p>
+<hr />
+<h2>2. 펭귄 프라블럼</h2>
+<h3>바꿔치기 테스트</h3>
+<table>
+<thead>
+<tr>
+<th>카피 원문</th>
+<th>클로드→제미나이로 바꿔도 되는가</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>하루 만에 읽고 평생 업무 시간을 줄여주는 가장 가벼운 AI 활용서</td>
+<td>된다</td>
+<td>회색</td>
+</tr>
+<tr>
+<td>퇴근 후 3시간이면 완성! 복잡한 코딩 없이 말로 부리는 AI 활용서</td>
+<td>앞은 되고, "복잡한 코딩 없이"는 클로드에서만 의미가 산다</td>
+<td>옅은 분홍</td>
+</tr>
+<tr>
+<td>가입부터 보고서, 블로그, SNS 글쓰기까지 한 번에 해결하는 친절한 입문서</td>
+<td>완전히 된다</td>
+<td>회색</td>
+</tr>
+<tr>
+<td>일상과 업무의 효율을 200% 올리는 실용 중심 활용서</td>
+<td>어떤 AI 책에도 들어간다</td>
+<td><strong>진회색</strong></td>
+</tr>
+<tr>
+<td>어려운 내용은 빼고, 오직 알짜만 담은 클로드 첫걸음</td>
+<td>된다</td>
+<td>회색</td>
+</tr>
+<tr>
+<td>회사 보고서부터 SNS 콘텐츠까지, 실생활 밀착 예제 50가지 총망라!</td>
+<td>된다 ("총망라"는 경쟁서 관용구)</td>
+<td>회색</td>
+</tr>
+<tr>
+<td>회사 보고서부터 SNS 기획, 대본까지, 주제별 맞춤 예제 50가지 총망라!</td>
+<td>된다</td>
+<td>회색</td>
+</tr>
+</tbody>
+</table>
+<p>7개 중 6개가 제품명만 바꾸면 그대로 경쟁서 띠지가 된다.</p>
+<h3>관용구 의존도</h3>
+<table>
+<thead>
+<tr>
+<th>표현</th>
+<th>경쟁 사용</th>
+<th>우리 사용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>총망라 / 올인원 / 완전 정복</td>
+<td>6종</td>
+<td>✅ 2회</td>
+</tr>
+<tr>
+<td>누구나·쉽게·친절한</td>
+<td>5종</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>활용서 / 입문서 / 첫걸음</td>
+<td>거의 전부</td>
+<td>✅ 5회</td>
+</tr>
+<tr>
+<td>○○% 향상</td>
+<td>다수</td>
+<td>✅ (200%)</td>
+</tr>
+<tr>
+<td>실무·실생활 밀착</td>
+<td>다수</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<p><strong>"복잡한 코딩 없이 말로 부리는" 한 구절만 관용구가 아니다.</strong></p>
+<hr />
+<h2>3. 고객의 눈</h2>
+<table>
+<thead>
+<tr>
+<th>카피 요소</th>
+<th>시점</th>
+<th>독자 언어로 바꾸면</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"가장 가벼운 AI 활용서"</td>
+<td>만든 사람 (책의 두께)</td>
+<td>독자는 책 두께가 아니라 자기 시간을 잰다</td>
+</tr>
+<tr>
+<td>"실용 중심 활용서"</td>
+<td>만든 사람 (편집 방침)</td>
+<td>독자는 '실용 중심'을 검색하지 않는다</td>
+</tr>
+<tr>
+<td>"효율 200%"</td>
+<td>만든 사람 (자랑)</td>
+<td>근거 없는 수치는 오히려 신뢰를 깎는다</td>
+</tr>
+<tr>
+<td>"예제 50가지 총망라"</td>
+<td>만든 사람 (분량)</td>
+<td>"내 업무에 그게 있냐"가 독자 질문이다</td>
+</tr>
+<tr>
+<td>"가입부터"</td>
+<td>만든 사람 (목차 순서)</td>
+<td>독자는 가입을 사고 싶은 게 아니다</td>
+</tr>
+<tr>
+<td><strong>"책 속 템플릿을 따라 써보세요"</strong></td>
+<td><strong>사는 사람</strong></td>
+<td>유일하게 독자에게 무슨 일이 생기는지 말한다</td>
+</tr>
+</tbody>
+</table>
+<p>표지에서 가장 작은 말풍선이 유일하게 독자 언어다.</p>
+<hr />
+<h2>4. 빅아이디어</h2>
+<table>
+<thead>
+<tr>
+<th>후보</th>
+<th>더 낫다</th>
+<th>새롭다</th>
+<th>전혀 다르다</th>
+<th>경쟁 근거</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. 쉽고 빠른 클로드 입문</td>
+<td>○</td>
+<td>✕</td>
+<td>✕</td>
+<td>난이도·완결성 축 모두 포화</td>
+<td>탈락</td>
+</tr>
+<tr>
+<td>B. 코딩 없이 말로 시키는 클로드</td>
+<td>○</td>
+<td>○</td>
+<td>△</td>
+<td>클로드 40종 중 절반 이상이 개발서 — 전제 뒤집기</td>
+<td>조건부</td>
+</tr>
+<tr>
+<td><strong>C. 읽고 끝나는 책이 아니라, 내 업무 템플릿 50개가 남는 책</strong></td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>템플릿 소유 축 사용 0종. 경쟁서는 예제 '개수'만 말하고 '남는다'는 말은 아무도 안 한다</td>
+<td><strong>채택</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>빅아이디어 C가 세 기준을 모두 통과한다.</strong><br />
+경쟁서는 전부 "이 책에 뭐가 들어 있는가"를 판다. C는 "이 책을 덮은 뒤 당신에게 뭐가 남는가"를 판다. 정보 상품에서 도구 상품으로 범주가 바뀐다.<br />
+B는 단독으로는 "쉽다"의 변형이라 약하지만, C의 실행 근거로 붙이면 강해진다.</p>
+<hr />
+<h2>5. 패키징 — 재작성안</h2>
+<h3>1안 — 템플릿 소유 (추천)</h3>
+<blockquote>
+<p><strong>하단 메인</strong><br />
+하루면 끝, 평생 쓴다 — 내 업무용 클로드 템플릿 50개</p>
+<p><strong>보조 3줄</strong><br />
+- 코딩 한 줄 없이, 말로 시켜서 만듭니다<br />
+- 보고서·기획서·블로그·SNS — 내일 당장 쓸 것부터<br />
+- 책을 덮으면 예제가 아니라 <strong>내 템플릿</strong>이 남습니다</p>
+</blockquote>
+<p>노리는 빈 자리: 템플릿 소유 축(사용 0종) × 자사 검증된 속도 축.<br />
+"총망라·활용서·200%" 전부 제거.</p>
+<h3>2안 — 전제 뒤집기 (B+C)</h3>
+<blockquote>
+<p><strong>하단 메인</strong><br />
+클로드는 개발자 도구가 아닙니다. 당신 책상 위 도구입니다</p>
+<p><strong>보조 3줄</strong><br />
+- 설치도 코딩도 없이, 말로 시키면 끝<br />
+- 보고서·기획서·SNS 콘텐츠 50가지를 하루 만에<br />
+- 따라 쓰는 순간 내 업무 템플릿이 됩니다</p>
+</blockquote>
+<p>서점 매대에서 개발서 사이에 놓였을 때 가장 강하게 작동한다. 다만 "개발자 도구가 아니다"는 부정형이라 시리즈 톤과는 다소 이질적일 수 있다.</p>
+<h3>3안 — 시리즈 안전형 (기존 톤 유지)</h3>
+<blockquote>
+<p><strong>하단 메인</strong><br />
+챗GPT·제미나이 1위 시리즈가 만든 클로드 편</p>
+<p><strong>보조 3줄</strong><br />
+- 하루면 읽고, 그날부터 씁니다<br />
+- 코딩 없이 말로 시키는 보고서·기획서·SNS 50가지<br />
+- 예제마다 붙은 템플릿을 그대로 내 것으로</p>
+</blockquote>
+<p>시리즈 실적을 권위 근거로 전면화. 신간 노출이 약한 초기 2주에 가장 효율적이다.</p>
+<hr />
+<h2>6. 셀링 점검</h2>
+<ol>
+<li><strong>"200%"는 빼는 게 신뢰에 낫다.</strong> 근거가 없다. 경쟁서도 같은 말을 해서 변별력도 없다.</li>
+<li><strong>"총망라"는 골든래빗·한빛의 관용구다.</strong> 우리가 쓰면 그 책들의 후발주자로 읽힌다.</li>
+<li><strong>권위 근거가 표지에 전혀 없다.</strong> 시리즈 두 종이 Yes24 IT 일별 1위를 찍었는데 표지 어디에도 없다. 이건 가장 값싸고 확실한 신뢰 자산이다.</li>
+<li><strong>표지 아이콘 4개 중 코드(<code>&lt;/&gt;</code>) 아이콘이 "복잡한 코딩 없이"와 정면 충돌한다.</strong> 둘 중 하나를 정해야 한다. 비개발자 포지션이면 코드 아이콘을 빼는 게 맞다.</li>
+<li><strong>"하단카피" 자리에 들어갈 문장이 곧 매대에서 읽히는 유일한 한 줄이다.</strong> 부속 7줄은 온라인 상세페이지용으로 내리고, 표지에는 한 줄만 남긴다.</li>
+<li><strong>제목에 "코워크"류 기능어가 하나도 없다.</strong> 포지션상으로는 옳지만 Yes24 검색 노출은 손해다. 부제나 띠지에 한 번만 넣어 검색을 받쳐주는 것을 권한다.</li>
+</ol>
+<hr />
+<h2>최종 추천</h2>
+<p><strong>1안 — "하루면 끝, 평생 쓴다 — 내 업무용 클로드 템플릿 50개"</strong></p>
+<ol>
+<li><strong>제목의 검증된 자산을 지키면서</strong> 하단에서만 차별화한다. "하루 만에"는 74,526·28,059로 두 번 증명된 축이라 건드리면 안 된다.</li>
+<li><strong>아무도 점유하지 않은 축을 잡는다.</strong> 클로드 14종·대체 3종 중 "템플릿이 독자 자산으로 남는다"를 말한 책은 0종이다. 완결성(44,649 점령)·난이도(포화)로는 이길 수 없다.</li>
+<li><strong>표지 말풍선에 이미 있던 것을 크게 키우는 일</strong>이라 편집·디자인 리스크가 가장 낮다.</li>
+</ol>
+<p><strong>함께 반영할 것</strong>: "퇴근 후 3시간" 삭제(퇴근 프레임 3종 모두 2,358 이하), "200%" 삭제, "총망라" 삭제, 코드 아이콘 재검토, 띠지에 시리즈 1위 실적 명기.</p>
+<hr />
+<p><em>데이터 출처: 이지스봇 — Yes24 IT/모바일 일별 베스트 및 판매지수(2026-08-17 기준), Yes24·교보 실판매부수(2026-07-19~08-17). 판매지수는 시점 누적값이며 절판·개정판 상품이 분리 집계된 점을 감안해 읽었다.</em></p>
+</div></body></html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>된다! 하루 만에 끝내는 클로드 활용법 — 표지 시안 A/B</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#111;
+    --green:#1f7a3f;
+    --orange:#e8802a;
+    --yellow:#f2e94b;
+    --paper:#fff;
+    --bg:#f4f5f7;
+    --muted:#6b7280;
+    --line:#d9dce1;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+    background:var(--bg); color:var(--ink);
+    padding:36px 24px 64px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1180px;margin:0 auto}
+  header.page{margin-bottom:28px}
+  header.page h1{font-size:21px;font-weight:900;letter-spacing:-.02em}
+  header.page p{margin-top:7px;font-size:13.5px;color:var(--muted);line-height:1.65}
+  .row{display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start}
+  .col{flex:1 1 380px;min-width:340px}
+  .tag{
+    display:inline-block;font-size:12px;font-weight:700;letter-spacing:.02em;
+    background:#111;color:#fff;padding:5px 11px;border-radius:999px;margin-bottom:11px;
+  }
+  .tag.b{background:#3b5bdb}
+
+  /* ---------- COVER ---------- */
+  .cover{
+    position:relative;background:var(--paper);width:100%;aspect-ratio:380/518;
+    border:1px solid var(--line);border-radius:3px;
+    box-shadow:0 10px 30px rgba(17,17,17,.10);
+    padding:20px 22px 16px;display:flex;flex-direction:column;overflow:hidden;
+  }
+  .kicker{font-size:7.5px;font-weight:700;line-height:1.45;color:#333;letter-spacing:-.02em}
+  .kicker b{font-size:9px}
+
+  .topcopy{
+    margin-top:12px;margin-left:auto;width:70%;
+    font-size:11px;font-weight:500;line-height:1.5;letter-spacing:-.035em;text-align:left;
+  }
+  .topcopy b{font-weight:900}
+
+  .titleblock{display:flex;align-items:center;gap:8px}
+  .sp1{flex:1 1 auto;min-height:12px}
+  .sp2{flex:1.25 1 auto;min-height:10px}
+  .doenda{font-size:38px;font-weight:900;letter-spacing:-.05em;line-height:1;flex:0 0 auto}
+  .brace{flex:0 0 auto;width:20px;align-self:stretch;display:flex;align-items:center}
+  .brace svg{width:100%;height:100%}
+  .titles{flex:1 1 auto;text-align:center}
+  .line1{font-size:20px;font-weight:700;letter-spacing:-.05em;line-height:1.15;white-space:nowrap}
+  .hl{
+    position:relative;display:inline-block;padding:0 3px;z-index:0;
+  }
+  .hl::before{
+    content:"";position:absolute;left:-2px;right:-2px;top:8%;bottom:6%;
+    background:var(--yellow);border-radius:999px;z-index:-1;
+  }
+  .big{font-size:57px;font-weight:900;letter-spacing:-.055em;line-height:1.02;margin-top:2px}
+
+  .greenbox{
+    margin:20px auto 0;width:88%;background:var(--green);color:#fff;
+    border-radius:999px;padding:9px 12px;text-align:center;
+    font-size:11.5px;font-weight:700;letter-spacing:-.045em;line-height:1.35;
+  }
+  .greenbox .num{color:var(--yellow)}
+
+  .author{margin-top:11px;text-align:center;font-size:8.5px;font-weight:500;color:#333}
+
+  .icons{padding-top:0;display:flex;justify-content:center;gap:8px}
+  .ic{display:flex;flex-direction:column;align-items:center;gap:5px;width:58px}
+  .ic svg{width:24px;height:24px;stroke:#111;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+  .ic .lab{font-size:7.5px;font-weight:700;letter-spacing:-.04em;border:1px solid #111;border-radius:3px;padding:2px 0;width:100%;text-align:center}
+  .ic .do{font-size:6.8px;font-weight:500;letter-spacing:-.045em;color:#444;text-align:center;line-height:1.3;min-height:17px}
+
+  .logo{margin-top:12px;text-align:center;font-size:11px;font-weight:900;letter-spacing:-.05em}
+
+  .bubble{
+    position:absolute;left:14px;bottom:112px;width:88px;background:var(--orange);color:#fff;
+    font-size:8px;font-weight:700;line-height:1.4;letter-spacing:-.04em;
+    padding:8px 8px;text-align:center;border-radius:2px;
+  }
+  .bubble::after{
+    content:"";position:absolute;left:11px;bottom:-8px;border-width:8px 9px 0 0;
+    border-style:solid;border-color:var(--orange) transparent transparent transparent;
+  }
+
+  /* ---------- OBI ---------- */
+  .obi{
+    margin-top:12px;background:#111;color:#fff;border-radius:3px;
+    padding:11px 14px;display:flex;align-items:center;justify-content:center;gap:9px;
+    font-size:11.5px;font-weight:700;letter-spacing:-.04em;text-align:center;
+  }
+  .obi .no1{color:var(--yellow);font-weight:900}
+  .obi small{display:block;font-size:9px;font-weight:400;color:#b9bdc4;margin-top:3px;letter-spacing:-.02em}
+
+  .caption{margin-top:9px;font-size:11.5px;color:var(--muted);line-height:1.6}
+  .caption b{color:#111}
+
+  /* ---------- NOTES ---------- */
+  .notes{margin-top:38px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px 24px}
+  .notes h2{font-size:14.5px;font-weight:900;margin-bottom:14px;letter-spacing:-.02em}
+  table{width:100%;border-collapse:collapse;font-size:12.5px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid #edeff2;vertical-align:top;line-height:1.55}
+  th{font-weight:700;color:#374151;background:#fafbfc;font-size:11.5px;white-space:nowrap}
+  td.was{color:#9aa1ab;text-decoration:line-through}
+  td.now{font-weight:600}
+  td.why{color:#4b5563;font-size:11.5px}
+  .foot{margin-top:16px;font-size:11px;color:var(--muted);line-height:1.65;border-top:1px solid #edeff2;padding-top:13px}
+  @media (max-width:860px){ .col{flex:1 1 100%} }
+</style>
+</head>
+<body>
+<div class="wrap"><a href="./" style="display:inline-block;margin-bottom:14px;font-size:12.5px;color:#5b6472;text-decoration:none;font-weight:600">← 목차로</a>
+
+  <header class="page">
+    <h1>된다! 하루 만에 끝내는 클로드 활용법 — 표지 시안 A / B</h1>
+    <p>3차 검토 반영본. 제목·시리즈 톤은 유지하고 <b>초록 박스만 두 안</b>으로 나눴습니다. 예제 개수는 <b>50 가안</b>이며 세 자리 모두 같은 숫자로 맞췄습니다.</p>
+  </header>
+
+  <div class="row">
+
+    <!-- ================= A안 ================= -->
+    <div class="col">
+      <span class="tag">A안 — 프롬프트 노동 제거</span>
+      <div class="cover">
+        <div class="kicker">능력과 가치를<br>높이고 싶다면<br><b>된다!</b></div>
+
+        <div class="topcopy">여행 계획부터 <b>회사 보고서</b>,<br><b>SNS 운영</b>까지</div>
+
+        <div class="sp1"></div>
+        <div class="titleblock">
+          <div class="doenda">된다!</div>
+          <div class="brace">
+            <svg viewBox="0 0 20 200" preserveAspectRatio="none">
+              <path d="M4 2 C14 2 8 92 18 100 C8 108 14 198 4 198" stroke="#111" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="titles">
+            <div class="line1"><span class="hl">하루</span> 만에 끝내는</div>
+            <div class="big">클로드<br>활용법</div>
+          </div>
+        </div>
+
+        <div class="greenbox">프롬프트 짜지 마세요.<br>상황별 템플릿 <span class="num">50</span>개만 복사하면 끝!</div>
+        <div class="author">노창범 지음</div>
+        <div class="sp2"></div>
+
+        <div class="icons">
+          <div class="ic">
+            <svg viewBox="0 0 24 24"><path d="M5 4h11l3 3v13H5z"/><path d="M8 10h8M8 14h6"/></svg>
+            <div class="lab">스킬</div><div class="do">내 전용<br>명령어 만들기</div>
+          </div>
+          <div class="ic">
+            <svg viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg>
+            <div class="lab">코드</div><div class="do">말로 시켜서<br>프로그램 만들기</div>
+          </div>
+          <div class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18c1.5 0 2-1 1.5-2s0-2 1.5-2h2A4 4 0 0021 13c0-5.5-4-10-9-10z"/><circle cx="8" cy="11" r="1"/><circle cx="12" cy="8" r="1"/></svg>
+            <div class="lab">디자인</div><div class="do">PPT부터<br>웹 페이지까지</div>
+          </div>
+          <div class="ic">
+            <svg viewBox="0 0 24 24"><path d="M3 12l4-3 4 3 3-2 3 2 4-3"/><path d="M3 16l4-3 4 3 3-2 3 2 4-3"/></svg>
+            <div class="lab">코워크</div><div class="do">진짜 알아서<br>일하는</div>
+          </div>
+          <div class="ic">
+            <svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+            <div class="lab">모바일</div><div class="do">출퇴근길에도<br>이어서</div>
+          </div>
+        </div>
+
+        <div class="logo">이지스퍼블리싱</div>
+        <div class="bubble">책 속 템플릿만<br>따라 쓰면 끝!</div>
+      </div>
+
+      <div class="obi">
+        <div>챗GPT · 제미나이 편 <span class="no1">Yes24 IT 일별 1위</span> 시리즈<br>
+        <small>2025년 두 종 모두 1위 · 판매지수 74,526 / 28,059</small></div>
+      </div>
+      <div class="caption"><b>노리는 자리</b> — 독자가 실제로 겪는 불편(프롬프트 쓰기)을 직접 건드립니다. 클로드 14종 중 사용 0종인 <b>템플릿 소유 축</b>.</div>
+    </div>
+
+    <!-- ================= B안 ================= -->
+    <div class="col">
+      <span class="tag b">B안 — 즉시성</span>
+      <div class="cover">
+        <div class="kicker">능력과 가치를<br>높이고 싶다면<br><b>된다!</b></div>
+
+        <div class="topcopy">여행 계획부터 <b>회사 보고서</b>,<br><b>SNS 운영</b>까지</div>
+
+        <div class="sp1"></div>
+        <div class="titleblock">
+          <div class="doenda">된다!</div>
+          <div class="brace">
+            <svg viewBox="0 0 20 200" preserveAspectRatio="none">
+              <path d="M4 2 C14 2 8 92 18 100 C8 108 14 198 4 198" stroke="#111" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="titles">
+            <div class="line1"><span class="hl">하루</span> 만에 끝내는</div>
+            <div class="big">클로드<br>활용법</div>
+          </div>
+        </div>
+
+        <div class="greenbox">복사해 쓰면 끝!<br>오늘 밤 바로 써먹는 클로드 템플릿 <span class="num">50</span></div>
+        <div class="author">노창범 지음</div>
+        <div class="sp2"></div>
+
+        <div class="icons">
+          <div class="ic">
+            <svg viewBox="0 0 24 24"><path d="M5 4h11l3 3v13H5z"/><path d="M8 10h8M8 14h6"/></svg>
+            <div class="lab">스킬</div><div class="do">내 전용<br>명령어 만들기</div>
+          </div>
+          <div class="ic">
+            <svg viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg>
+            <div class="lab">코드</div><div class="do">말로 시켜서<br>프로그램 만들기</div>
+          </div>
+          <div class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18c1.5 0 2-1 1.5-2s0-2 1.5-2h2A4 4 0 0021 13c0-5.5-4-10-9-10z"/><circle cx="8" cy="11" r="1"/><circle cx="12" cy="8" r="1"/></svg>
+            <div class="lab">디자인</div><div class="do">PPT부터<br>웹 페이지까지</div>
+          </div>
+          <div class="ic">
+            <svg viewBox="0 0 24 24"><path d="M3 12l4-3 4 3 3-2 3 2 4-3"/><path d="M3 16l4-3 4 3 3-2 3 2 4-3"/></svg>
+            <div class="lab">코워크</div><div class="do">진짜 알아서<br>일하는</div>
+          </div>
+          <div class="ic">
+            <svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+            <div class="lab">모바일</div><div class="do">출퇴근길에도<br>이어서</div>
+          </div>
+        </div>
+
+        <div class="logo">이지스퍼블리싱</div>
+        <div class="bubble">책 속 템플릿만<br>따라 쓰면 끝!</div>
+      </div>
+
+      <div class="obi">
+        <div>챗GPT · 제미나이 편 <span class="no1">Yes24 IT 일별 1위</span> 시리즈<br>
+        <small>2025년 두 종 모두 1위 · 판매지수 74,526 / 28,059</small></div>
+      </div>
+      <div class="caption"><b>노리는 자리</b> — 《바로바로 클로드》를 44,649로 만든 <b>즉시성 축</b>에 정면으로 섭니다. "오늘 밤"이 구매를 오늘로 당깁니다.</div>
+    </div>
+
+  </div>
+
+  <!-- ================= NOTES ================= -->
+  <div class="notes">
+    <h2>무엇이 바뀌었나</h2>
+    <table>
+      <thead><tr><th>자리</th><th>이전</th><th>수정</th><th>근거</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>상단</td>
+          <td class="was">일상, 업무부터 SNS까지! 어디서든 다 먹히는 / 상황별 프롬프트 템플릿 000가지 대공개!</td>
+          <td class="now">여행 계획부터 회사 보고서, SNS 운영까지</td>
+          <td class="why">'일상'을 약속에서 예시로 강등. 일상·생활·여행 축 8종 전부 하위권(최고 5,496, 대부분 1,300 이하). '다 먹히는'·'대공개' 관용구 제거.</td>
+        </tr>
+        <tr>
+          <td>초록 박스</td>
+          <td class="was">내 일상과 업무를 바꾸는 00가지 노하우</td>
+          <td class="now">A · B 두 안 (템플릿 축으로 통일)</td>
+          <td class="why">'노하우'는 만든 사람 언어이고 바꿔치기 테스트 통과 실패. 상단·말풍선과 메시지가 어긋나던 것을 <b>세 자리 모두 '템플릿'으로 정렬</b>.</td>
+        </tr>
+        <tr>
+          <td>숫자</td>
+          <td class="was">00가지 / 000가지 (두 개)</td>
+          <td class="now">50 하나로 통일</td>
+          <td class="why">개수는 이 시장의 표준 신호(81제·71제·74가지·31제). 숫자가 둘이면 몇 개짜리 책인지 흐려짐. <b>확정되면 세 자리 동시 교체 필요.</b></td>
+        </tr>
+        <tr>
+          <td>아이콘</td>
+          <td class="was">스킬 / 코드 / 디자인 / 코워크 (키워드만)</td>
+          <td class="now">5개 + "뭘 할 수 있는지" 한 줄씩</td>
+          <td class="why">승빈님 제안 그대로 채택. 기능 나열 8종 중 44,649 하나 빼면 600~3,744. 모바일은 경쟁서에 없는 항목이라 차별 신호.</td>
+        </tr>
+        <tr>
+          <td>띠지</td>
+          <td class="was">(없음)</td>
+          <td class="now">시리즈 1위 실적 명기</td>
+          <td class="why">'입문·쉽다'를 뺀 자리를 채우는 권위 근거. 세 시안 모두 빠져 있던 가장 값싼 신뢰 자산.</td>
+        </tr>
+        <tr>
+          <td>삭제</td>
+          <td class="was">AI 비서 만들기 / 칼퇴 / 한 권에 / 200% / 총망라 / 입문·쉽다</td>
+          <td class="now">전부 제외</td>
+          <td class="why">비서 4종 1,500 이하 · '만들기'는 자사 활용법 대비 7~20배 열세 · '한 권에' 최고 3,744 · 퇴근 3종 2,358 이하.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="foot">
+      이 파일은 <b>카피 배치 검토용 목업</b>입니다. 서체·자간·아이콘은 실제 디자인이 아니라 위치와 비중을 보기 위한 근사치입니다.<br>
+      데이터 출처: 이지스봇 — Yes24 IT/모바일 일별 베스트 및 판매지수(2026-08-17 기준).
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

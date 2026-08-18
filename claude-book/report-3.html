@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>3차 — 승빈님 정리안 검토</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans KR','Apple SD Gothic Neo',sans-serif;background:#f4f5f7;color:#111;
+ padding:30px 20px 70px;-webkit-font-smoothing:antialiased;line-height:1.75}
+.wrap{max-width:880px;margin:0 auto;background:#fff;border:1px solid #e4e6ea;border-radius:10px;padding:34px 40px 44px}
+.back{display:inline-block;max-width:880px;margin:0 auto 14px;font-size:12.5px;color:#5b6472;text-decoration:none;font-weight:600}
+.back:hover{text-decoration:underline}
+.backwrap{max-width:880px;margin:0 auto}
+h1{font-size:23px;font-weight:900;letter-spacing:-.03em;margin-bottom:6px;line-height:1.4}
+h2{font-size:17px;font-weight:900;letter-spacing:-.025em;margin:34px 0 10px;padding-top:18px;border-top:1px solid #eef0f3}
+h3{font-size:14px;font-weight:800;margin:22px 0 8px;letter-spacing:-.02em}
+p{font-size:14px;margin:10px 0;color:#24292f}
+ul,ol{margin:10px 0 10px 20px;font-size:14px}
+li{margin-bottom:5px}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:14px 0}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid #eef0f3;vertical-align:top;line-height:1.6}
+th{font-weight:700;font-size:11.5px;color:#374151;background:#fafbfc}
+blockquote{border-left:3px solid #d0d7de;padding:2px 0 2px 15px;margin:14px 0;color:#4b5563;font-size:13.5px}
+code{background:#f3f4f6;padding:1px 5px;border-radius:4px;font-size:12.5px}
+hr{border:0;border-top:1px solid #eef0f3;margin:26px 0}
+strong{font-weight:800}
+em{color:#6b7280;font-style:normal;font-size:12.5px}
+</style></head><body>
+<div class="backwrap"><a class="back" href="./">← 목차로</a></div>
+<div class="wrap">
+<h1>3차 검토 — 승빈님 정리안</h1>
+<p>핑크펭귄 프레임워크 / 데이터 기준일 2026-08-17 (Yes24 일별, 이지스봇)</p>
+<h2>요약</h2>
+<ul>
+<li><strong>표지가 3차에 걸쳐 가장 좋아졌습니다.</strong> '입문·쉽다·총망라·200%' 관용구가 전부 빠졌고, 아이콘을 기능 나열에서 "뭘 할 수 있는지"로 바꾸자는 제안은 이번 라운드 최대 성과입니다.</li>
+<li><strong>다만 새로 잡은 두 축이 데이터상 위험합니다.</strong> '일상'은 미개척이 아니라 <strong>8종 이상이 시도해 전부 하위권</strong>이고, 'AI 비서 만들기'는 <strong>자사 데이터로 이미 반증</strong>됩니다.</li>
+<li><strong>가장 큰 구조 문제는 그대로입니다.</strong> 표지의 세 자리(상단·초록 박스·말풍선)가 각각 다른 말을 하고, 가장 큰 자리인 초록 박스만 다시 회색으로 돌아갔습니다.</li>
+<li><strong>한 줄 결론</strong>: 상단의 "상황별 프롬프트 템플릿"을 초록 박스로 내리고, 일상은 소구점이 아니라 범위를 보여주는 예시로만 쓰면 됩니다.</li>
+</ul>
+<hr />
+<h2>1. 이번 안에서 확실히 좋아진 것</h2>
+<table>
+<thead>
+<tr>
+<th>판단</th>
+<th>데이터 근거</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"'하루만에' 시리즈가 입문서 신호를 이미 준다 → 카피에서 '입문·쉽다' 빼자"</td>
+<td>난이도 축 5종 포화, 최고 7,212. 시리즈 실적(74,526·28,059)이 신뢰를 대신함</td>
+<td>✅ <strong>정확</strong></td>
+</tr>
+<tr>
+<td>"키워드 나열 말고 '뭘 할 수 있는지'를 보여주자"</td>
+<td>기능 나열 8종 중 44,649 하나 빼면 600~3,744. 나열 자체는 힘이 없음</td>
+<td>✅ <strong>이번 라운드 최대 개선</strong></td>
+</tr>
+<tr>
+<td>상단 카피에서 '총망라' 삭제, 구체 예시로 대체</td>
+<td>'총망라·올인원' 축 최고 3,744</td>
+<td>✅ 정확</td>
+</tr>
+<tr>
+<td>헤드에 "상황별 프롬프트 템플릿" 등장</td>
+<td>템플릿 소유 축은 클로드 14종 중 사용 0종</td>
+<td>✅ <strong>드디어 큰 자리로</strong></td>
+</tr>
+</tbody>
+</table>
+<p>특히 아이콘 문구는 그대로 쓰셔도 좋습니다.<br />
+"내 전용 명령어 만들기 / PPT부터 웹 페이지까지 / '진짜' 알아서 일하는" — 전부 독자 언어입니다.</p>
+<hr />
+<h2>2. 위험한 축 ① — "일상"</h2>
+<blockquote>
+<p>"업무, 일상에서의 클로드를 활용하는 방법을 담았다 ← 다른 책에 없는 소구점"</p>
+</blockquote>
+<p><strong>없는 게 아니라, 여러 번 나왔고 안 팔렸습니다.</strong></p>
+<table>
+<thead>
+<tr>
+<th>도서</th>
+<th>판매지수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>업무와 <strong>일상</strong>을 정리하는 새로운 방법 노션 (제이펍)</td>
+<td>5,496</td>
+</tr>
+<tr>
+<td>해달리와 함께 떠나는 신나는 AI <strong>여행</strong> (제이펍)</td>
+<td>1,224</td>
+</tr>
+<tr>
+<td>쉽게 배우고 <strong>생활</strong>에 바로 쓰는 AI 활용 (아이콕스)</td>
+<td>1,035</td>
+</tr>
+<tr>
+<td>AI를 내 편으로 만드는 60+ <strong>생활</strong> 수업</td>
+<td>240</td>
+</tr>
+<tr>
+<td>내 손안에 <strong>일상</strong>이 되는 ChatGPT&amp;Gemini</td>
+<td>210</td>
+</tr>
+<tr>
+<td>AI 기반 <strong>여행</strong> 의사 결정</td>
+<td>126</td>
+</tr>
+<tr>
+<td><strong>일상</strong>이 달라지는 스마트폰 사용법</td>
+<td>120</td>
+</tr>
+<tr>
+<td>인생 2막 스마트폰 AI <strong>생활</strong>교과서</td>
+<td>102</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>최고가 5,496인데 그마저 노션 책이고, 제목에 <strong>'업무와 일상'을 병기</strong>했습니다. '일상' 단독으로 성공한 사례가 없습니다.</li>
+<li>핑크펭귄 관점에서 이건 <strong>미개척이 아니라 검증된 실패</strong>에 가깝습니다. 빈 축을 발견했을 때 가장 먼저 물어야 할 것이 이 구분입니다.</li>
+<li>원인 추정: IT 카테고리 매대에 오는 독자는 '여행 계획'을 사러 오지 않습니다. 일상 소구는 시니어·스마트폰 활용서 쪽에서 소비되고, 그 시장은 이 책의 독자가 아닙니다.</li>
+</ul>
+<p><strong>다만 반론도 있습니다.</strong> 위 8종은 대부분 저가·비주류 출판사이고, 이지스가 '된다!' 시리즈로 하면 결과가 다를 수 있습니다. 그래서 제안은 "일상을 빼라"가 아니라 <strong>"일상을 헤드가 아니라 예시로 내려라"</strong>입니다.</p>
+<ul>
+<li>❌ 헤드: "일상, 업무부터 SNS까지! 어디서든 다 먹히는" → 일상이 약속이 됨</li>
+<li>✅ 헤드: "여행 계획부터 회사 보고서까지" → 일상이 <strong>범위를 증명하는 예시</strong>가 됨</li>
+</ul>
+<p>같은 단어를 쓰지만, 파는 것은 여전히 업무입니다. 리스크 없이 폭만 넓힙니다.</p>
+<hr />
+<h2>3. 위험한 축 ② — "AI 비서 만들기"</h2>
+<blockquote>
+<p>"내 삶 전체를 관통하는 AI 비서 만들기!" / "24시간 나와 함께 하는 AI 비서 만들기!"</p>
+</blockquote>
+<p><strong>함정이 두 개 겹쳐 있습니다.</strong></p>
+<h3>ⓐ '비서' — 지난 검토에서 이미 확인된 실패 축</h3>
+<table>
+<thead>
+<tr>
+<th>도서</th>
+<th>판매지수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>유튜브 AI <strong>비서</strong> 고용하기 (골든래빗)</td>
+<td>1,482</td>
+</tr>
+<tr>
+<td>누구나 성공하는 AI <strong>비서</strong>, 오픈클로 (책밥)</td>
+<td>1,293</td>
+</tr>
+<tr>
+<td>딸깍! 나의 업무 <strong>비서</strong> 클로드 (위키북스)</td>
+<td>1,197</td>
+</tr>
+<tr>
+<td>내 손안의 1등 <strong>비서</strong>, 스마트폰 활용 지침서</td>
+<td>60</td>
+</tr>
+</tbody>
+</table>
+<h3>ⓑ '만들기' — 자사 데이터가 직접 반증합니다</h3>
+<table>
+<thead>
+<tr>
+<th>자사 도서</th>
+<th>판매지수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>된다! 하루 만에 끝내는 제미나이 <strong>활용법</strong></td>
+<td><strong>74,526</strong></td>
+</tr>
+<tr>
+<td>된다! 하루 만에 끝내는 챗GPT <strong>활용법</strong></td>
+<td><strong>28,059</strong></td>
+</tr>
+<tr>
+<td>된다! 제미나이, 클로드, 챗GPT AI 챗봇 <strong>만들기</strong></td>
+<td>3,516</td>
+</tr>
+<tr>
+<td>된다! 하루 만에 <strong>만드는</strong> AI 사진 &amp; 이미지</td>
+<td>4,068</td>
+</tr>
+</tbody>
+</table>
+<p><strong>같은 출판사, 같은 시리즈 톤인데 '활용법'과 '만들기'가 7~20배 차이입니다.</strong></p>
+<p>그리고 '만들기' 상위권을 보면 이유가 보입니다.</p>
+<table>
+<thead>
+<tr>
+<th>도서</th>
+<th>판매지수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>요즘 바이브 코딩 커서 AI 30가지 프로그램 만들기</td>
+<td>15,180</td>
+</tr>
+<tr>
+<td>이게 되네? AI 쇼츠 만들기 미친 자동화 22제</td>
+<td>8,322</td>
+</tr>
+<tr>
+<td>나만의 MCP 서버 만들기 with 커서 AI</td>
+<td>4,164</td>
+</tr>
+</tbody>
+</table>
+<p><strong>'만들기'가 잘 팔릴 때는 전부 개발·자동화 책입니다.</strong> 즉 '만들기'는 시장에서 개발자 신호로 읽힙니다.</p>
+<p>이건 대리님이 2안을 두고 "바이브 코딩 책 설명 같다"고 하신 그 함정과 같습니다. 표지에 "코드" 아이콘까지 있어서 신호가 더 강해집니다. 그리고 제목은 "하루 만에 <strong>끝내는</strong>"인데 카피는 "<strong>만들기</strong>"라 시간 약속과 노동 약속이 충돌합니다.</p>
+<blockquote>
+<p>독자가 얻는 이득을 말하자는 방향은 옳습니다. 다만 그 이득은 <strong>"비서를 만든다"가 아니라 "비서가 이미 책 안에 있다"</strong>여야 시리즈와 맞습니다.</p>
+</blockquote>
+<hr />
+<h2>4. 구조 문제 — 세 자리가 서로 다른 말을 합니다</h2>
+<table>
+<thead>
+<tr>
+<th>자리</th>
+<th>크기</th>
+<th>현재 문구</th>
+<th>말하는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>상단</td>
+<td>중</td>
+<td>상황별 프롬프트 템플릿 000가지 대공개!</td>
+<td><strong>템플릿</strong></td>
+</tr>
+<tr>
+<td>초록 박스</td>
+<td><strong>대(가장 큼)</strong></td>
+<td>내 일상과 업무를 바꾸는 00가지 노하우</td>
+<td><strong>노하우</strong></td>
+</tr>
+<tr>
+<td>말풍선</td>
+<td>소</td>
+<td>책 속 템플릿만 따라 쓰면 끝!</td>
+<td><strong>템플릿</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>초록 박스만 다른 말을 하고, 하필 가장 큰 자리입니다.</strong> 1차 진단 때 "가장 차별적인 메시지가 가장 작은 자리에 있다"고 짚은 구조가 형태만 바꿔 반복됐습니다.</li>
+<li><strong>"내 일상과 업무를 바꾸는 00가지 노하우"는 바꿔치기 테스트를 통과하지 못합니다.</strong> '클로드'를 '제미나이'로 바꿔도 그대로 성립합니다. '노하우'는 만든 사람 언어이고, '바꾸는'은 앞서 뺀 '200%'와 같은 종류의 막연한 약속입니다.</li>
+<li><strong>숫자가 두 개입니다</strong>(00가지 노하우 / 000가지 템플릿). 독자는 이 책에 몇 개가 들었는지 헷갈립니다. <strong>숫자는 하나로 통일</strong>하시고, 그 하나를 크게 쓰세요.</li>
+<li>"어디서든 다 먹히는"은 완결성 관용구의 구어 버전이고, "대공개"도 관용구입니다.</li>
+</ul>
+<hr />
+<h2>5. 통합 최종안</h2>
+<h3>표지</h3>
+<table>
+<thead>
+<tr>
+<th>자리</th>
+<th>권고 문구</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>상단</strong></td>
+<td>여행 계획부터 회사 보고서, SNS 운영까지</td>
+</tr>
+<tr>
+<td><strong>초록 박스(메인)</strong></td>
+<td><strong>프롬프트 짜지 마세요. 상황별 템플릿 50개만 복사하면 끝!</strong></td>
+</tr>
+<tr>
+<td><strong>말풍선</strong></td>
+<td>책 속 템플릿만 따라 쓰면 끝! <em>(유지)</em></td>
+</tr>
+<tr>
+<td><strong>숫자</strong></td>
+<td>50 하나로 통일 (확정 후 반드시 기입)</td>
+</tr>
+</tbody>
+</table>
+<p>초록 박스 대안 — 즉시성을 더 세우고 싶으시면:</p>
+<blockquote>
+<p><strong>복사해 쓰면 끝! 오늘 밤 바로 써먹는 클로드 템플릿 50</strong></p>
+</blockquote>
+<h3>아이콘 (승빈님 안 거의 그대로)</h3>
+<table>
+<thead>
+<tr>
+<th>아이콘</th>
+<th>권고 문구</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>클로드 스킬</td>
+<td>내 전용 명령어 만들기</td>
+<td>그대로</td>
+</tr>
+<tr>
+<td>클로드 코드</td>
+<td>말로 시켜서 프로그램 만들기</td>
+<td>그대로</td>
+</tr>
+<tr>
+<td>클로드 디자인</td>
+<td>PPT부터 웹 페이지까지</td>
+<td>그대로</td>
+</tr>
+<tr>
+<td>클로드 코워크</td>
+<td>진짜 알아서 일하는</td>
+<td>따옴표만 제거 검토</td>
+</tr>
+<tr>
+<td>클로드 모바일</td>
+<td>출퇴근길에도 이어서</td>
+<td>"바로바로"는 경쟁 1위 도서 제목이라 회피</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>아이콘 라벨 수준에서는 '만들기'를 써도 됩니다.</strong> 문제는 헤드 카피에서 '만들기'가 책 전체의 약속이 될 때입니다. 작은 라벨은 기능 설명이라 오독 위험이 낮습니다.</li>
+<li>아이콘이 4개인데 제안은 5개입니다. 디자인 조정이 필요합니다.</li>
+<li>'클로드 모바일' 추가는 좋습니다. 나머지 넷과 층위가 다르지만(기능이 아니라 채널) 그래서 오히려 경쟁서에 없는 항목입니다.</li>
+</ul>
+<hr />
+<h2>6. 셀링 점검</h2>
+<ol>
+<li><strong>'대공개'는 빼도 됩니다.</strong> 템플릿 개수를 말하는 순간 이미 공개한다는 뜻입니다.</li>
+<li><strong>"어디서든 다 먹히는"은 시리즈 톤과 결이 다릅니다.</strong> '된다!'는 담백한 확신 톤인데 이 표현은 과장 톤입니다.</li>
+<li><strong>띠지에 시리즈 실적을 넣으세요.</strong> 챗GPT·제미나이 편 Yes24 IT 일별 1위 — 이번 안에서도 여전히 표지 어디에도 없습니다. '입문·쉽다'를 뺀 자리를 이게 채워야 합니다.</li>
+<li><strong>숫자 자리(00·000)를 비워둔 채로 회의를 더 돌리지 마세요.</strong> 이 시장은 개수가 표준 신호입니다(81제·71제·74가지·31제). 개수가 정해져야 헤드 카피의 힘도 정해집니다.</li>
+</ol>
+<hr />
+<p><em>데이터 출처: 이지스봇 — Yes24 IT/모바일 일별 베스트 및 판매지수(2026-08-17 기준). '일상' 축 8종은 대부분 비주류 출판사 사례라 이지스 브랜드로 재시도할 경우의 결과는 판단 범위 밖임을 밝힙니다.</em></p>
+</div></body></html>
