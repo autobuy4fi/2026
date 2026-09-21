@@ -1,0 +1,1829 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Do it! 시리즈 출간 연혁</title>
+<style>
+  :root {
+    --bg: #f5f7f8;
+    --panel: #ffffff;
+    --ink: #1f2328;
+    --sub: #6b7280;
+    --accent: #1f6feb;
+    --accent-soft: #e6f0ff;
+    --line: #e2e5e8;
+    --op-bg: #eef0f1;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14171a;
+      --panel: #1f2327;
+      --ink: #eaeaea;
+      --sub: #9aa0a6;
+      --accent: #58a6ff;
+      --accent-soft: #16283f;
+      --line: #31363b;
+      --op-bg: #1a1d20;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14171a;
+    --panel: #1f2327;
+    --ink: #eaeaea;
+    --sub: #9aa0a6;
+    --accent: #58a6ff;
+    --accent-soft: #16283f;
+    --line: #31363b;
+    --op-bg: #1a1d20;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    padding: 0 16px 64px;
+  }
+  header {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 0 24px;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 28px;
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+  }
+  header .accent { color: var(--accent); }
+  header p {
+    color: var(--sub);
+    font-size: 14px;
+    margin: 4px 0;
+  }
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  .stat {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 10px 20px;
+    min-width: 100px;
+  }
+  .stat .num { font-size: 22px; font-weight: 700; color: var(--accent); }
+  .stat .label { font-size: 12px; color: var(--sub); margin-top: 2px; }
+
+  .timeline {
+    max-width: 900px;
+    margin: 32px auto 0;
+    position: relative;
+    padding-left: 24px;
+    border-left: 2px solid var(--line);
+  }
+  .year-divider {
+    margin: 36px 0 16px -24px;
+    display: flex;
+    align-items: center;
+  }
+  .year-divider span {
+    background: var(--ink);
+    color: var(--bg);
+    font-weight: 700;
+    font-size: 13px;
+    padding: 4px 14px;
+    border-radius: 999px;
+  }
+  .year-divider:first-child { margin-top: 0; }
+
+  .card {
+    display: flex;
+    gap: 16px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 12px;
+    margin: 10px 0 10px 4px;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    left: -29px;
+    top: 22px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+  }
+  .card.out-of-print { opacity: 0.6; }
+  a.card.link-card { cursor: pointer; transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease; }
+  a.card.link-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.10);
+    border-color: var(--accent);
+  }
+
+  .cover {
+    flex: 0 0 64px;
+    width: 64px;
+    height: 90px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--op-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  }
+  .cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .cover.no-image, .cover.fallback {
+    background: linear-gradient(135deg, var(--accent-soft), var(--op-bg));
+  }
+  .cover.fallback img { display: none; }
+  .cover-fallback-text {
+    font-size: 10px;
+    color: var(--sub);
+    text-align: center;
+    padding: 4px;
+    line-height: 1.3;
+  }
+
+  .meta {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+  }
+  .date {
+    font-size: 12px;
+    color: var(--sub);
+    font-variant-numeric: tabular-nums;
+  }
+  .title {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+  .author {
+    font-size: 13px;
+    color: var(--sub);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 999px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .badge-op { background: #e5e5e5; color: #666; }
+  :root:not([data-theme="light"]) .badge-op { background: #3a3a3a; color: #bbb; }
+  :root[data-theme="dark"] .badge-op { background: #3a3a3a; color: #bbb; }
+  .link-arrow {
+    display: inline-block;
+    margin-left: 4px;
+    font-size: 12px;
+    color: var(--accent);
+    vertical-align: middle;
+  }
+
+  footer {
+    max-width: 900px;
+    margin: 40px auto 0;
+    text-align: center;
+    color: var(--sub);
+    font-size: 12px;
+    padding: 0 8px;
+  }
+
+  @media (max-width: 640px) {
+    body { padding: 0 12px 48px; }
+    header { padding: 32px 0 16px; }
+    header h1 { font-size: 22px; }
+    header p { font-size: 13px; }
+    .stats { gap: 10px; margin-top: 16px; }
+    .stat { padding: 8px 14px; min-width: 84px; }
+    .stat .num { font-size: 18px; }
+    .stat .label { font-size: 10px; }
+
+    .timeline { margin-top: 24px; padding-left: 18px; }
+    .year-divider { margin: 28px 0 12px -18px; }
+    .year-divider span { font-size: 12px; padding: 3px 12px; }
+
+    .card { gap: 10px; padding: 10px; margin: 8px 0 8px 2px; border-radius: 12px; }
+    .card::before { left: -22px; width: 8px; height: 8px; }
+
+    .cover { flex: 0 0 52px; width: 52px; height: 74px; }
+    .title { font-size: 13.5px; }
+    .date { font-size: 11px; }
+    .author { font-size: 12px; }
+    .badge { font-size: 9px; padding: 1px 6px; }
+  }
+
+  @media (max-width: 380px) {
+    .cover { flex: 0 0 44px; width: 44px; height: 62px; }
+    .title { font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Do it! <span class="accent">시리즈</span> 출간 연혁</h1>
+  <p>2010-09-18 ~ 2026-09-20</p>
+  <div class="stats">
+    <div class="stat"><div class="num">172</div><div class="label">총 종수</div></div>
+    <div class="stat"><div class="num">102</div><div class="label">현재 판매중</div></div>
+    <div class="stat"><div class="num">95</div><div class="label">Yes24 링크 연결</div></div>
+  </div>
+</header>
+
+<div class="timeline">
+<div class="year-divider" id="y2010"><span>2010</span></div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">[절판] Do it! HT</div></div>
+      <div class="meta">
+        <div class="date">2010-09-18</div>
+        <div class="title">[절판] Do it! HTML5+CSS3<span class="badge badge-op">절판</span></div>
+        <div class="author">고경희</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! bada 모바</div></div>
+      <div class="meta">
+        <div class="date">2010-10-22</div>
+        <div class="title">Do it! bada 모바일 프로그래밍<span class="badge badge-op">절판</span></div>
+        <div class="author">여인춘</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 페이스북</div></div>
+      <div class="meta">
+        <div class="date">2010-11-20</div>
+        <div class="title">Do it! 페이스북<span class="badge badge-op">절판</span></div>
+        <div class="author">임문영</div>
+      </div>
+    </div>
+<div class="year-divider" id="y2011"><span>2011</span></div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! iPad2 완</div></div>
+      <div class="meta">
+        <div class="date">2011-05-18</div>
+        <div class="title">Do it! iPad2 완전 활용법<span class="badge badge-op">절판</span></div>
+        <div class="author">강문성</div>
+      </div>
+    </div>
+<div class="year-divider" id="y2012"><span>2012</span></div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 쉽게 배우는 </div></div>
+      <div class="meta">
+        <div class="date">2012-03-25</div>
+        <div class="title">Do it! 쉽게 배우는 웹앱&amp;하이브리드앱<span class="badge badge-op">절판</span></div>
+        <div class="author">김응석</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">[절판] Do it! 워드</div></div>
+      <div class="meta">
+        <div class="date">2012-10-15</div>
+        <div class="title">[절판] Do it! 워드프레스 웹사이트 만들기<span class="badge badge-op">절판</span></div>
+        <div class="author">최동진 ‧ 이태원</div>
+      </div>
+    </div>
+<div class="year-divider" id="y2013"><span>2013</span></div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! AutoCAD</div></div>
+      <div class="meta">
+        <div class="date">2013-01-02</div>
+        <div class="title">Do it! AutoCAD 오토캐드 2013<span class="badge badge-op">절판</span></div>
+        <div class="author">문용삼‧김혜영</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">[절판] Do it! 직접</div></div>
+      <div class="meta">
+        <div class="date">2013-02-20</div>
+        <div class="title">[절판] Do it! 직접 해보는 하둡 프로그래밍<span class="badge badge-op">절판</span></div>
+        <div class="author">한기용</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">[절판] Do it! 안드</div></div>
+      <div class="meta">
+        <div class="date">2013-06-29</div>
+        <div class="title">[절판] Do it! 안드로이드 앱 프로그래밍<span class="badge badge-op">절판</span></div>
+        <div class="author">정재곤</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! AutoCAD</div></div>
+      <div class="meta">
+        <div class="date">2013-09-13</div>
+        <div class="title">Do it! AutoCAD 오토캐드 2014<span class="badge badge-op">절판</span></div>
+        <div class="author">문용삼 ‧ 김혜영‧ 박한울</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">[절판] Do it! HT</div></div>
+      <div class="meta">
+        <div class="date">2013-09-27</div>
+        <div class="title">[절판] Do it! HTML5+CSS3 웹 표준의 정석<span class="badge badge-op">절판</span></div>
+        <div class="author">고경희</div>
+      </div>
+    </div>
+<div class="year-divider" id="y2014"><span>2014</span></div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">[절판] DO it! 아이</div></div>
+      <div class="meta">
+        <div class="date">2014-04-09</div>
+        <div class="title">[절판] DO it! 아이폰 앱 프로그래밍 - iOS 8버전<span class="badge badge-op">절판</span></div>
+        <div class="author">소영섭</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! AutoCAD</div></div>
+      <div class="meta">
+        <div class="date">2014-06-25</div>
+        <div class="title">Do it! AutoCAD 오토캐드 2015</div>
+        <div class="author">김혜영, 박한울</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">[절판] Do it! 반응</div></div>
+      <div class="meta">
+        <div class="date">2014-07-10</div>
+        <div class="title">[절판] Do it! 반응형 웹 디자인<span class="badge badge-op">절판</span></div>
+        <div class="author">김운아</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 쉽게 배우는 </div></div>
+      <div class="meta">
+        <div class="date">2014-07-25</div>
+        <div class="title">Do it! 쉽게 배우는 웹앱&amp;하이브리드앱-전면 개정판<span class="badge badge-op">절판</span></div>
+        <div class="author">김응석</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 자바스크립트+</div></div>
+      <div class="meta">
+        <div class="date">2014-07-31</div>
+        <div class="title">Do it! 자바스크립트+제이쿼리 입문<span class="badge badge-op">절판</span></div>
+        <div class="author">정인용</div>
+      </div>
+    </div>
+<div class="year-divider" id="y2015"><span>2015</span></div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">[절판] Do it! 안드</div></div>
+      <div class="meta">
+        <div class="date">2015-01-20</div>
+        <div class="title">[절판] Do it! 안드로이드 앱 프로그래밍&lt;전면 개정 2판&gt;<span class="badge badge-op">절판</span></div>
+        <div class="author">정재곤</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 쉽게 만드는 </div></div>
+      <div class="meta">
+        <div class="date">2015-06-04</div>
+        <div class="title">Do it! 쉽게 만드는 워드프레스 웹사이트<span class="badge badge-op">절판</span></div>
+        <div class="author">이태원</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! AutoCAD</div></div>
+      <div class="meta">
+        <div class="date">2015-08-07</div>
+        <div class="title">Do it! AutoCAD 오토캐드 2016<span class="badge badge-op">절판</span></div>
+        <div class="author">박한울, 이정아</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">[절판] Do it! 프런</div></div>
+      <div class="meta">
+        <div class="date">2015-10-07</div>
+        <div class="title">[절판] Do it! 프런트엔드 웹 디자인 입문<span class="badge badge-op">절판</span></div>
+        <div class="author">고경희</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! HTML5+C</div></div>
+      <div class="meta">
+        <div class="date">2015-11-01</div>
+        <div class="title">Do it! HTML5+CSS3 단기완성</div>
+        <div class="author">고경희</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 쉽게 배우는 </div></div>
+      <div class="meta">
+        <div class="date">2015-12-07</div>
+        <div class="title">Do it! 쉽게 배우는 웹앱&amp;하이브리드앱&lt;전면 개정 2판&gt;<span class="badge badge-op">절판</span></div>
+        <div class="author">김응석</div>
+      </div>
+    </div>
+<div class="year-divider" id="y2016"><span>2016</span></div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">[절판] Do it! 안드</div></div>
+      <div class="meta">
+        <div class="date">2016-01-21</div>
+        <div class="title">[절판] Do it! 안드로이드 앱 프로그래밍&lt;전면 개정 3판&gt;<span class="badge badge-op">절판</span></div>
+        <div class="author">정재곤</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">[절판] Do it! 아이</div></div>
+      <div class="meta">
+        <div class="date">2016-01-27</div>
+        <div class="title">[절판] Do it! 아이폰 앱 프로그래밍&lt;iOS 9 버전 전면 개정 2판 &gt;<span class="badge badge-op">절판</span></div>
+        <div class="author">소영섭</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 점프 투 파이</div></div>
+      <div class="meta">
+        <div class="date">2016-03-03</div>
+        <div class="title">Do it! 점프 투 파이썬<span class="badge badge-op">절판</span></div>
+        <div class="author">박응용</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">[절판] Do it! 스위</div></div>
+      <div class="meta">
+        <div class="date">2016-06-10</div>
+        <div class="title">[절판] Do it! 스위프트로 아이폰 앱 만들기 - 입문<span class="badge badge-op">절판</span></div>
+        <div class="author">이범근, 송호정</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 레빗</div></div>
+      <div class="meta">
+        <div class="date">2016-09-26</div>
+        <div class="title">Do it! 레빗<span class="badge badge-op">절판</span></div>
+        <div class="author">장동수</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">[절판] Do it! No</div></div>
+      <div class="meta">
+        <div class="date">2016-09-26</div>
+        <div class="title">[절판] Do it! Node.js 프로그래밍<span class="badge badge-op">절판</span></div>
+        <div class="author">정재곤</div>
+      </div>
+    </div>
+<div class="year-divider" id="y2017"><span>2017</span></div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! HTML5+C</div></div>
+      <div class="meta">
+        <div class="date">2017-01-03</div>
+        <div class="title">Do it! HTML5+CSS3 웹 표준의 정석 &lt;개정판&gt;<span class="badge badge-op">절판</span></div>
+        <div class="author">고경희</div>
+      </div>
+    </div>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/35094862" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/35094862/L" alt="Do it! C 언어 입문 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2017-01-10</div>
+        <div class="title">Do it! C 언어 입문<span class="link-arrow">↗</span></div>
+        <div class="author">김성엽</div>
+      </div>
+    </a>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 스위프트로 아</div></div>
+      <div class="meta">
+        <div class="date">2017-02-07</div>
+        <div class="title">Do it! 스위프트로 아이폰 앱 만들기 - 입문 &lt;개정판&gt;<span class="badge badge-op">절판</span></div>
+        <div class="author">송호정, 이범근</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 안드로이드 앱</div></div>
+      <div class="meta">
+        <div class="date">2017-02-21</div>
+        <div class="title">Do it! 안드로이드 앱 프로그래밍 &lt;전면 개정 4판&gt;<span class="badge badge-op">절판</span></div>
+        <div class="author">정재곤</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! Node.js</div></div>
+      <div class="meta">
+        <div class="date">2017-03-06</div>
+        <div class="title">Do it! Node.js 프로그래밍 &lt;전면 개정판&gt;<span class="badge badge-op">절판</span></div>
+        <div class="author">정재곤</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 반응형 웹 만</div></div>
+      <div class="meta">
+        <div class="date">2017-06-04</div>
+        <div class="title">Do it! 반응형 웹 만들기<span class="badge badge-op">절판</span></div>
+        <div class="author">김운아</div>
+      </div>
+    </div>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/43868089" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/43868089/L" alt="Do it! 쉽게 배우는 R 데이터 분석 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2017-07-20</div>
+        <div class="title">Do it! 쉽게 배우는 R 데이터 분석<span class="link-arrow">↗</span></div>
+        <div class="author">김영우</div>
+      </div>
+    </a>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 웹 사이트 기</div></div>
+      <div class="meta">
+        <div class="date">2017-08-29</div>
+        <div class="title">Do it! 웹 사이트 기획 입문<span class="badge badge-op">절판</span></div>
+        <div class="author">이정원</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 오토캐드 20</div></div>
+      <div class="meta">
+        <div class="date">2017-11-15</div>
+        <div class="title">Do it! 오토캐드 2018<span class="badge badge-op">절판</span></div>
+        <div class="author">박한울</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 스위프트로 아</div></div>
+      <div class="meta">
+        <div class="date">2017-12-12</div>
+        <div class="title">Do it! 스위프트로 아이폰 앱 만들기 입문 - 개정 2판<span class="badge badge-op">절판</span></div>
+        <div class="author">송호정, 이범근</div>
+      </div>
+    </div>
+
+    <a class="card link-card out-of-print" href="https://www.yes24.com/product/goods/114998692" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/114998692/L" alt="Do it! 자료구조와 함께 배우는 알고리즘 입문 - C 언어 편 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2017-12-27</div>
+        <div class="title">Do it! 자료구조와 함께 배우는 알고리즘 입문 - C 언어 편<span class="badge badge-op">절판</span><span class="link-arrow">↗</span></div>
+        <div class="author">시바타 보요</div>
+      </div>
+    </a>
+<div class="year-divider" id="y2018"><span>2018</span></div>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/58206961" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/58206961/L" alt="Do it! Vue.js 입문 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2018-02-05</div>
+        <div class="title">Do it! Vue.js 입문<span class="link-arrow">↗</span></div>
+        <div class="author">장기효</div>
+      </div>
+    </a>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 안드로이드 앱</div></div>
+      <div class="meta">
+        <div class="date">2018-02-09</div>
+        <div class="title">Do it! 안드로이드 앱 프로그래밍 - 개정 5판<span class="badge badge-op">절판</span></div>
+        <div class="author">정재곤</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 프런트엔드 웹</div></div>
+      <div class="meta">
+        <div class="date">2018-02-26</div>
+        <div class="title">Do it! 프런트엔드 웹 디자인 입문 - 전면 개정판<span class="badge badge-op">절판</span></div>
+        <div class="author">고경희</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 자바스크립트 </div></div>
+      <div class="meta">
+        <div class="date">2018-04-06</div>
+        <div class="title">Do it! 자바스크립트 + 제이쿼리 입문 - 전면 개정판</div>
+        <div class="author">정인용</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 오토캐드 20</div></div>
+      <div class="meta">
+        <div class="date">2018-04-24</div>
+        <div class="title">Do it! 오토캐드 2019<span class="badge badge-op">절판</span></div>
+        <div class="author">박한울</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 자료구조와 함</div></div>
+      <div class="meta">
+        <div class="date">2018-05-15</div>
+        <div class="title">Do it! 자료구조와 함께 배우는 알고리즘 입문 - 자바 편<span class="badge badge-op">절판</span></div>
+        <div class="author">보요 시바타</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 자바 프로그래</div></div>
+      <div class="meta">
+        <div class="date">2018-08-06</div>
+        <div class="title">Do it! 자바 프로그래밍 입문</div>
+        <div class="author">박은종</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 데이터 분석을</div></div>
+      <div class="meta">
+        <div class="date">2018-10-11</div>
+        <div class="title">Do it! 데이터 분석을 위한 판다스 입문</div>
+        <div class="author">다니엘 첸(Chen, Daniel Y.)</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it 오라클로 배우는</div></div>
+      <div class="meta">
+        <div class="date">2018-10-26</div>
+        <div class="title">Do it 오라클로 배우는 데이터베이스 입문</div>
+        <div class="author">이지훈</div>
+      </div>
+    </div>
+<div class="year-divider" id="y2019"><span>2019</span></div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 스위프트로 아</div></div>
+      <div class="meta">
+        <div class="date">2019-01-10</div>
+        <div class="title">Do it! 스위프트로 아이폰 앱 만들기 입문 - 개정 3판<span class="badge badge-op">절판</span></div>
+        <div class="author">송호정, 이범근</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 안드로이드 앱</div></div>
+      <div class="meta">
+        <div class="date">2019-03-25</div>
+        <div class="title">Do it! 안드로이드 앱 프로그래밍 전면 개정 6판(파이)<span class="badge badge-op">절판</span></div>
+        <div class="author">정재곤</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 웹 프로그래밍</div></div>
+      <div class="meta">
+        <div class="date">2019-03-26</div>
+        <div class="title">Do it! 웹 프로그래밍을 위한 자바스크립트 기본 편<span class="badge badge-op">절판</span></div>
+        <div class="author">고경희</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 오토캐드 20</div></div>
+      <div class="meta">
+        <div class="date">2019-05-17</div>
+        <div class="title">Do it! 오토캐드 2020<span class="badge badge-op">절판</span></div>
+        <div class="author">박한울</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 코틀린 프로그</div></div>
+      <div class="meta">
+        <div class="date">2019-05-28</div>
+        <div class="title">Do it! 코틀린 프로그래밍<span class="badge badge-op">절판</span></div>
+        <div class="author">황영덕</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 점프 투 파이</div></div>
+      <div class="meta">
+        <div class="date">2019-06-20</div>
+        <div class="title">Do it! 점프 투 파이썬 - 전면 개정판</div>
+        <div class="author">박응용</div>
+      </div>
+    </div>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/78896574" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/78896574/L" alt="Do it! 정직하게 코딩하며 배우는 딥러닝 입문 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2019-09-20</div>
+        <div class="title">Do it! 정직하게 코딩하며 배우는 딥러닝 입문<span class="link-arrow">↗</span></div>
+        <div class="author">박해선</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/82958861" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/82958861/L" alt="Do it! 첫 코딩 with 자바 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2019-11-20</div>
+        <div class="title">Do it! 첫 코딩 with 자바<span class="link-arrow">↗</span></div>
+        <div class="author">정동균</div>
+      </div>
+    </a>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 웹 사이트 따</div></div>
+      <div class="meta">
+        <div class="date">2019-11-28</div>
+        <div class="title">Do it! 웹 사이트 따라 만들기<span class="badge badge-op">절판</span></div>
+        <div class="author">김윤미</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 지옥에서 온 </div></div>
+      <div class="meta">
+        <div class="date">2019-12-06</div>
+        <div class="title">Do it! 지옥에서 온 문서 관리자 깃&amp;깃허브 입문<span class="badge badge-op">절판</span></div>
+        <div class="author">고경희, 이고잉</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 스위프트로 아</div></div>
+      <div class="meta">
+        <div class="date">2019-12-23</div>
+        <div class="title">Do it! 스위프트로 아이폰 앱 만들기 입문 - 개정 4판<span class="badge badge-op">절판</span></div>
+        <div class="author">송호정, 이범근</div>
+      </div>
+    </div>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/85112155" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/85112155/L" alt="Do it! HTML5+CSS3 웹 표준의 정석 - 전면 개정 2판 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2019-12-27</div>
+        <div class="title">Do it! HTML5+CSS3 웹 표준의 정석 - 전면 개정 2판<span class="link-arrow">↗</span></div>
+        <div class="author">고경희</div>
+      </div>
+    </a>
+<div class="year-divider" id="y2020"><span>2020</span></div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 안드로이드 앱</div></div>
+      <div class="meta">
+        <div class="date">2020-01-10</div>
+        <div class="title">Do it! 안드로이드 앱 프로그래밍 전면 개정 7판(안드로이드 10)<span class="badge badge-op">절판</span></div>
+        <div class="author">정재곤</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 리액트 프로그</div></div>
+      <div class="meta">
+        <div class="date">2020-02-07</div>
+        <div class="title">Do it! 리액트 프로그래밍 정석<span class="badge badge-op">절판</span></div>
+        <div class="author">박호준</div>
+      </div>
+    </div>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/89328106" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/89328106/L" alt="Do it! 타입스크립트 프로그래밍 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2020-02-27</div>
+        <div class="title">Do it! 타입스크립트 프로그래밍<span class="link-arrow">↗</span></div>
+        <div class="author">전예홍</div>
+      </div>
+    </a>
+
+    <div class="card">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 키트 없이 만</div></div>
+      <div class="meta">
+        <div class="date">2020-04-02</div>
+        <div class="title">Do it! 키트 없이 만드는 아두이노</div>
+        <div class="author">박필준</div>
+      </div>
+    </div>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/89904189" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/89904189/L" alt="Do it! 첫 파이썬 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2020-04-10</div>
+        <div class="title">Do it! 첫 파이썬<span class="link-arrow">↗</span></div>
+        <div class="author">엘리스 코딩</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/90227307" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/90227307/L" alt="Do it! 건축 BIM을 위한 Revit 입문 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2020-05-12</div>
+        <div class="title">Do it! 건축 BIM을 위한 Revit 입문<span class="link-arrow">↗</span></div>
+        <div class="author">장동수</div>
+      </div>
+    </a>
+
+    <a class="card link-card out-of-print" href="https://www.yes24.com/product/goods/90344496" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/90344496/L" alt="Do it! 클론 코딩 영화 평점 웹서비스 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2020-05-19</div>
+        <div class="title">Do it! 클론 코딩 영화 평점 웹서비스<span class="badge badge-op">절판</span><span class="link-arrow">↗</span></div>
+        <div class="author">니꼴라스, 김형태</div>
+      </div>
+    </a>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 오토캐드 20</div></div>
+      <div class="meta">
+        <div class="date">2020-05-29</div>
+        <div class="title">Do it! 오토캐드 2021<span class="badge badge-op">절판</span></div>
+        <div class="author">박한울</div>
+      </div>
+    </div>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/91219874" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/91219874/L" alt="Do it! 자료구조와 함께 배우는 알고리즘 입문 - 파이썬 편 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2020-07-20</div>
+        <div class="title">Do it! 자료구조와 함께 배우는 알고리즘 입문 - 파이썬 편<span class="link-arrow">↗</span></div>
+        <div class="author">시바타 보요</div>
+      </div>
+    </a>
+
+    <div class="card">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 파이썬 생활 </div></div>
+      <div class="meta">
+        <div class="date">2020-07-27</div>
+        <div class="title">Do it! 파이썬 생활 프로그래밍</div>
+        <div class="author">김창현</div>
+      </div>
+    </div>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/91724510" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/91724510/L" alt="Do it! 프로그레시브 웹앱 만들기 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2020-08-06</div>
+        <div class="title">Do it! 프로그레시브 웹앱 만들기<span class="link-arrow">↗</span></div>
+        <div class="author">김응석</div>
+      </div>
+    </a>
+
+    <a class="card link-card out-of-print" href="https://www.yes24.com/product/goods/95751850" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/95751850/L" alt="Do it! 점프 투 플라스크 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2020-11-25</div>
+        <div class="title">Do it! 점프 투 플라스크<span class="badge badge-op">절판</span><span class="link-arrow">↗</span></div>
+        <div class="author">박응용</div>
+      </div>
+    </a>
+<div class="year-divider" id="y2021"><span>2021</span></div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 점프 투 장고</div></div>
+      <div class="meta">
+        <div class="date">2021-01-06</div>
+        <div class="title">Do it! 점프 투 장고<span class="badge badge-op">절판</span></div>
+        <div class="author">박응용</div>
+      </div>
+    </div>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/96580456" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/96580456/L" alt="Do it! 첫 코딩 with 파이썬 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2021-01-15</div>
+        <div class="title">Do it! 첫 코딩 with 파이썬<span class="link-arrow">↗</span></div>
+        <div class="author">정동균</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/96541859" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/96541859/L" alt="Do it! 장고+부트스트랩 파이썬 웹 개발의 정석 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2021-01-18</div>
+        <div class="title">Do it! 장고+부트스트랩 파이썬 웹 개발의 정석<span class="link-arrow">↗</span></div>
+        <div class="author">이성용, 김태곤</div>
+      </div>
+    </a>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 구글 애널리틱</div></div>
+      <div class="meta">
+        <div class="date">2021-01-20</div>
+        <div class="title">Do it! 구글 애널리틱스 입문<span class="badge badge-op">절판</span></div>
+        <div class="author">김선영, 한수창</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! HTML+CS</div></div>
+      <div class="meta">
+        <div class="date">2021-01-22</div>
+        <div class="title">Do it! HTML+CSS+자바스크립트 웹 표준의 정석<span class="badge badge-op">절판</span></div>
+        <div class="author">고경희</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 스위프트로 아</div></div>
+      <div class="meta">
+        <div class="date">2021-01-26</div>
+        <div class="title">Do it! 스위프트로 아이폰 앱 만들기 입문 - 개정 5판<span class="badge badge-op">절판</span></div>
+        <div class="author">송호정, 이범근</div>
+      </div>
+    </div>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/97126355" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/97126355/L" alt="Do it! 쉽게 배우는 R 텍스트 마이닝 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2021-01-29</div>
+        <div class="title">Do it! 쉽게 배우는 R 텍스트 마이닝<span class="link-arrow">↗</span></div>
+        <div class="author">김영우</div>
+      </div>
+    </a>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 플러터 앱 프</div></div>
+      <div class="meta">
+        <div class="date">2021-02-23</div>
+        <div class="title">Do it! 플러터 앱 프로그래밍<span class="badge badge-op">절판</span></div>
+        <div class="author">조준수</div>
+      </div>
+    </div>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/98491624" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/98491624/L" alt="Do it! 반응형 웹 페이지 만들기 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2021-03-26</div>
+        <div class="title">Do it! 반응형 웹 페이지 만들기<span class="link-arrow">↗</span></div>
+        <div class="author">김운아</div>
+      </div>
+    </a>
+
+    <div class="card">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 오토캐드 20</div></div>
+      <div class="meta">
+        <div class="date">2021-05-07</div>
+        <div class="title">Do it! 오토캐드 2022</div>
+        <div class="author">박한울</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 리액트 네이티</div></div>
+      <div class="meta">
+        <div class="date">2021-05-09</div>
+        <div class="title">Do it! 리액트 네이티브 앱 프로그래밍<span class="badge badge-op">절판</span></div>
+        <div class="author">전예홍</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 강화 학습 입</div></div>
+      <div class="meta">
+        <div class="date">2021-06-11</div>
+        <div class="title">Do it! 강화 학습 입문</div>
+        <div class="author">조규남, 맹윤호, 임지순</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 안드로이드 앱</div></div>
+      <div class="meta">
+        <div class="date">2021-06-28</div>
+        <div class="title">Do it! 안드로이드 앱 프로그래밍 - 개정 8판<span class="badge badge-op">절판</span></div>
+        <div class="author">정재곤</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 깡샘의 안드로</div></div>
+      <div class="meta">
+        <div class="date">2021-08-21</div>
+        <div class="title">Do it! 깡샘의 안드로이드 앱 프로그래밍 with 코틀린<span class="badge badge-op">절판</span></div>
+        <div class="author">강성윤</div>
+      </div>
+    </div>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/103401495" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/103401495/L" alt="Do it! 인터랙티브 웹 페이지 만들기 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2021-08-23</div>
+        <div class="title">Do it! 인터랙티브 웹 페이지 만들기<span class="link-arrow">↗</span></div>
+        <div class="author">최성일</div>
+      </div>
+    </a>
+
+    <a class="card link-card out-of-print" href="https://www.yes24.com/product/goods/103190780" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/103190780/L" alt="Do it! 클론 코딩 트위터 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2021-08-23</div>
+        <div class="title">Do it! 클론 코딩 트위터<span class="badge badge-op">절판</span><span class="link-arrow">↗</span></div>
+        <div class="author">니꼴라스, 김준혁</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/103389317" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/103389317/L" alt="Do it! 자바 완전 정복 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2021-09-01</div>
+        <div class="title">Do it! 자바 완전 정복<span class="link-arrow">↗</span></div>
+        <div class="author">김동형</div>
+      </div>
+    </a>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 플러터 앱 프</div></div>
+      <div class="meta">
+        <div class="date">2021-09-08</div>
+        <div class="title">Do it! 플러터 앱 프로그래밍(개정판)<span class="badge badge-op">절판</span></div>
+        <div class="author">조준수</div>
+      </div>
+    </div>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/104229648" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/104229648/L" alt="Do it! 딥러닝 교과서 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2021-10-18</div>
+        <div class="title">Do it! 딥러닝 교과서<span class="link-arrow">↗</span></div>
+        <div class="author">윤성진</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/104803061" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/104803061/L" alt="Do it! 자바스크립트 입문 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2021-11-01</div>
+        <div class="title">Do it! 자바스크립트 입문<span class="link-arrow">↗</span></div>
+        <div class="author">고경희</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/104668255" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/104668255/L" alt="Do it! 첫 통계 with 베이즈 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2021-11-11</div>
+        <div class="title">Do it! 첫 통계 with 베이즈<span class="link-arrow">↗</span></div>
+        <div class="author">사사키 준</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/105294979" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/105294979/L" alt="Do it! BERT와 GPT로 배우는 자연어 처리 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2021-12-01</div>
+        <div class="title">Do it! BERT와 GPT로 배우는 자연어 처리<span class="link-arrow">↗</span></div>
+        <div class="author">이기창</div>
+      </div>
+    </a>
+<div class="year-divider" id="y2022"><span>2022</span></div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 스위프트로 아</div></div>
+      <div class="meta">
+        <div class="date">2022-02-28</div>
+        <div class="title">Do it! 스위프트로 아이폰 앱 만들기 입문 - 개정 6판<span class="badge badge-op">절판</span></div>
+        <div class="author">송호정, 이범근</div>
+      </div>
+    </div>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/108585680" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/108585680/L" alt="Do it! 첫 인공지능 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2022-04-01</div>
+        <div class="title">Do it! 첫 인공지능<span class="link-arrow">↗</span></div>
+        <div class="author">이애리</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/108571508" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/108571508/L" alt="Do it! 알고리즘 코딩 테스트 - 자바 편 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2022-04-05</div>
+        <div class="title">Do it! 알고리즘 코딩 테스트 - 자바 편<span class="link-arrow">↗</span></div>
+        <div class="author">김종관</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/109185787" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/109185787/L" alt="Do it! 자료구조와 함께 배우는 알고리즘 입문 ― 자바 편(전면 개정판) cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2022-04-25</div>
+        <div class="title">Do it! 자료구조와 함께 배우는 알고리즘 입문 ― 자바 편(전면 개정판)<span class="link-arrow">↗</span></div>
+        <div class="author">시바타 보요</div>
+      </div>
+    </a>
+
+    <a class="card link-card out-of-print" href="https://www.yes24.com/product/goods/109316768" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/109316768/L" alt="Do it! 클론 코딩 줌 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2022-05-19</div>
+        <div class="title">Do it! 클론 코딩 줌<span class="badge badge-op">절판</span><span class="link-arrow">↗</span></div>
+        <div class="author">니꼴라스, 강윤호</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/109645909" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/109645909/L" alt="Do it! 공공데이터로 배우는 R 데이터 분석 with 샤이니 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2022-05-25</div>
+        <div class="title">Do it! 공공데이터로 배우는 R 데이터 분석 with 샤이니<span class="link-arrow">↗</span></div>
+        <div class="author">김철민</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/109209932" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/109209932/L" alt="Do it! 점프 투 파이썬 - 라이브러리 예제 편 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2022-05-25</div>
+        <div class="title">Do it! 점프 투 파이썬 - 라이브러리 예제 편<span class="link-arrow">↗</span></div>
+        <div class="author">박응용</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/108947478" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/108947478/L" alt="Do it! 쉽게 배우는 파이썬 데이터 분석 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2022-05-31</div>
+        <div class="title">Do it! 쉽게 배우는 파이썬 데이터 분석<span class="link-arrow">↗</span></div>
+        <div class="author">김영우</div>
+      </div>
+    </a>
+
+    <div class="card">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 오토캐드 20</div></div>
+      <div class="meta">
+        <div class="date">2022-06-15</div>
+        <div class="title">Do it! 오토캐드 2023</div>
+        <div class="author">박한울</div>
+      </div>
+    </div>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/110262600" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/110262600/L" alt="Do it! SQL 입문 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2022-07-01</div>
+        <div class="title">Do it! SQL 입문<span class="link-arrow">↗</span></div>
+        <div class="author">강성욱</div>
+      </div>
+    </a>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 조코딩의 프로</div></div>
+      <div class="meta">
+        <div class="date">2022-07-18</div>
+        <div class="title">Do it! 조코딩의 프로그래밍 입문<span class="badge badge-op">절판</span></div>
+        <div class="author">조동근, 김형태</div>
+      </div>
+    </div>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/111686187" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/111686187/L" alt="Do it! 알고리즘 코딩 테스트 - 파이썬 편 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2022-08-16</div>
+        <div class="title">Do it! 알고리즘 코딩 테스트 - 파이썬 편<span class="link-arrow">↗</span></div>
+        <div class="author">김종관</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/114331473" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/114331473/L" alt="Do it! C# 프로그래밍 입문 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2022-10-13</div>
+        <div class="title">Do it! C# 프로그래밍 입문<span class="link-arrow">↗</span></div>
+        <div class="author">박필준</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/115633312" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/115633312/L" alt="Do it! 모던 자바스크립트 프로그래밍의 정석 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2022-12-05</div>
+        <div class="title">Do it! 모던 자바스크립트 프로그래밍의 정석<span class="link-arrow">↗</span></div>
+        <div class="author">고경희</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/116038106" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/116038106/L" alt="Do it! 게임 10개 만들며 배우는 파이썬 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2022-12-15</div>
+        <div class="title">Do it! 게임 10개 만들며 배우는 파이썬<span class="link-arrow">↗</span></div>
+        <div class="author">벤 포터, 쉬무엘 포터</div>
+      </div>
+    </a>
+
+    <div class="card">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 깡샘의 안드로</div></div>
+      <div class="meta">
+        <div class="date">2022-12-16</div>
+        <div class="title">Do it! 깡샘의 안드로이드 앱 프로그래밍 with 코틀린 — 개정 2판</div>
+        <div class="author">강성윤</div>
+      </div>
+    </div>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/116431190" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/116431190/L" alt="Do it! 알고리즘 코딩 테스트 - C++ 편 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2022-12-28</div>
+        <div class="title">Do it! 알고리즘 코딩 테스트 - C++ 편<span class="link-arrow">↗</span></div>
+        <div class="author">김종관</div>
+      </div>
+    </a>
+<div class="year-divider" id="y2023"><span>2023</span></div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 리액트 모던 </div></div>
+      <div class="meta">
+        <div class="date">2023-01-09</div>
+        <div class="title">Do it! 리액트 모던 웹 개발 with 타입스크립트<span class="badge badge-op">절판</span></div>
+        <div class="author">전예홍</div>
+      </div>
+    </div>
+
+    <div class="card out-of-print">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 프로덕트 디자</div></div>
+      <div class="meta">
+        <div class="date">2023-01-13</div>
+        <div class="title">Do it! 프로덕트 디자인 입문 with 피그마<span class="badge badge-op">절판</span></div>
+        <div class="author">이상효</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 스위프트로 아</div></div>
+      <div class="meta">
+        <div class="date">2023-01-20</div>
+        <div class="title">Do it! 스위프트로 아이폰 앱 만들기 입문 - 개정 7판</div>
+        <div class="author">송호정, 이범근</div>
+      </div>
+    </div>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/117206541" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/117206541/L" alt="Do it! 깡샘의 플러터 &amp; 다트 프로그래밍 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2023-02-06</div>
+        <div class="title">Do it! 깡샘의 플러터 &amp; 다트 프로그래밍<span class="link-arrow">↗</span></div>
+        <div class="author">강성윤</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/118431518" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/118431518/L" alt="Do it! 첫 알고리즘 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2023-04-21</div>
+        <div class="title">Do it! 첫 알고리즘<span class="link-arrow">↗</span></div>
+        <div class="author">마츠우라 켄이치로, 츠카사 유키</div>
+      </div>
+    </a>
+
+    <div class="card">
+      <div class="cover no-image"><div class="cover-fallback-text">Do it! 스케치업 wi</div></div>
+      <div class="meta">
+        <div class="date">2023-05-31</div>
+        <div class="title">Do it! 스케치업 with 엔스케이프</div>
+        <div class="author">최주영</div>
+      </div>
+    </div>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/118997230" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/118997230/L" alt="Do it! 오토캐드 2024 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2023-05-31</div>
+        <div class="title">Do it! 오토캐드 2024<span class="link-arrow">↗</span></div>
+        <div class="author">박한울</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/119293186" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/119293186/L" alt="Do it! 점프 투 파이썬 - 전면 개정 2판 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2023-06-15</div>
+        <div class="title">Do it! 점프 투 파이썬 - 전면 개정 2판<span class="link-arrow">↗</span></div>
+        <div class="author">박응용</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/120487430" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/120487430/L" alt="Do it! 점프 투 자바 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2023-07-20</div>
+        <div class="title">Do it! 점프 투 자바<span class="link-arrow">↗</span></div>
+        <div class="author">박응용</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/121173959" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/121173959/L" alt="Do it! 프런트엔드 UI 개발 with Vue.js cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2023-08-08</div>
+        <div class="title">Do it! 프런트엔드 UI 개발 with Vue.js<span class="link-arrow">↗</span></div>
+        <div class="author">김윤미</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/121551736" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/121551736/L" alt="Do it! 데이터 과학자를 위한 실전 머신러닝 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2023-08-14</div>
+        <div class="title">Do it! 데이터 과학자를 위한 실전 머신러닝<span class="link-arrow">↗</span></div>
+        <div class="author">배기웅</div>
+      </div>
+    </a>
+
+    <a class="card link-card out-of-print" href="https://www.yes24.com/product/goods/123278667" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/123278667/L" alt="Do it! 챗GPT &amp; 파이썬으로 AI 직원 만들기 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2023-11-10</div>
+        <div class="title">Do it! 챗GPT &amp; 파이썬으로 AI 직원 만들기<span class="badge badge-op">절판</span><span class="link-arrow">↗</span></div>
+        <div class="author">이성용</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/123406657" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/123406657/L" alt="Do it! Node.js 프로그래밍 입문 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2023-11-10</div>
+        <div class="title">Do it! Node.js 프로그래밍 입문<span class="link-arrow">↗</span></div>
+        <div class="author">고경희</div>
+      </div>
+    </a>
+
+    <a class="card link-card out-of-print" href="https://www.yes24.com/product/goods/123382570" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/123382570/L" alt="Do it! 구글 애널리틱스 4 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2023-11-13</div>
+        <div class="title">Do it! 구글 애널리틱스 4<span class="badge badge-op">절판</span><span class="link-arrow">↗</span></div>
+        <div class="author">한수창, 이준성</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/123685657" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/123685657/L" alt="Do it! 데이터 분석을 위한 판다스 입문 ─ 전면 개정판 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2023-11-20</div>
+        <div class="title">Do it! 데이터 분석을 위한 판다스 입문 ─ 전면 개정판<span class="link-arrow">↗</span></div>
+        <div class="author">다니엘 첸</div>
+      </div>
+    </a>
+
+    <a class="card link-card out-of-print" href="https://www.yes24.com/product/goods/123917088" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/123917088/L" alt="Do it! 실무 순서로 배우는 프로덕트 디자인 with 피그마 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2023-12-11</div>
+        <div class="title">Do it! 실무 순서로 배우는 프로덕트 디자인 with 피그마<span class="badge badge-op">절판</span><span class="link-arrow">↗</span></div>
+        <div class="author">이상효</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/124141907" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/124141907/L" alt="Do it! 점프 투 스프링 부트 3 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2023-12-20</div>
+        <div class="title">Do it! 점프 투 스프링 부트 3<span class="link-arrow">↗</span></div>
+        <div class="author">박응용</div>
+      </div>
+    </a>
+<div class="year-divider" id="y2024"><span>2024</span></div>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/124439550" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/124439550/L" alt="Do it! 웹 사이트 기획 입문 - 전면 개정판 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2024-01-25</div>
+        <div class="title">Do it! 웹 사이트 기획 입문 - 전면 개정판<span class="link-arrow">↗</span></div>
+        <div class="author">이정원</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/124608984" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/124608984/L" alt="Do it! 시뮬레이터+키트로 완성하는 아두이노 입문 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2024-01-25</div>
+        <div class="title">Do it! 시뮬레이터+키트로 완성하는 아두이노 입문<span class="link-arrow">↗</span></div>
+        <div class="author">박필준</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/124755495" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/124755495/L" alt="Do it! 일상이 자동화되는 파이썬 생활 프로그래밍 with 챗GPT cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2024-01-30</div>
+        <div class="title">Do it! 일상이 자동화되는 파이썬 생활 프로그래밍 with 챗GPT<span class="link-arrow">↗</span></div>
+        <div class="author">김창현</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/125189566" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/125189566/L" alt="Do it! 웹 디자인 교과서 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2024-02-29</div>
+        <div class="title">Do it! 웹 디자인 교과서<span class="link-arrow">↗</span></div>
+        <div class="author">정경희</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/125606390" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/125606390/L" alt="Do it! C++ 완전 정복 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2024-03-27</div>
+        <div class="title">Do it! C++ 완전 정복<span class="link-arrow">↗</span></div>
+        <div class="author">조규남, 문종채</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/125567157" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/125567157/L" alt="Do it! 리액트로 웹앱 만들기 with 타입스크립트 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2024-03-30</div>
+        <div class="title">Do it! 리액트로 웹앱 만들기 with 타입스크립트<span class="link-arrow">↗</span></div>
+        <div class="author">전예홍</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/125708277" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/125708277/L" alt="Do it! MySQL로 배우는 SQL 입문 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2024-04-05</div>
+        <div class="title">Do it! MySQL로 배우는 SQL 입문<span class="link-arrow">↗</span></div>
+        <div class="author">강성욱</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/126872601" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/126872601/L" alt="Do it! 깡샘의 안드로이드 앱 프로그래밍 with 코틀린 ─ 개정 3판 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2024-05-30</div>
+        <div class="title">Do it! 깡샘의 안드로이드 앱 프로그래밍 with 코틀린 ─ 개정 3판<span class="link-arrow">↗</span></div>
+        <div class="author">강성윤</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/126594782" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/126594782/L" alt="Do it! 조코딩의 첫 웹 개발 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2024-05-31</div>
+        <div class="title">Do it! 조코딩의 첫 웹 개발<span class="link-arrow">↗</span></div>
+        <div class="author">조동근, 조경민</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/126871757" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/126871757/L" alt="Do it! 오토캐드 2025 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2024-06-17</div>
+        <div class="title">Do it! 오토캐드 2025<span class="link-arrow">↗</span></div>
+        <div class="author">박한울</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/126871758" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/126871758/L" alt="Do it! 스케치업 with 엔스케이프 - 전면 개정판 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2024-06-17</div>
+        <div class="title">Do it! 스케치업 with 엔스케이프 - 전면 개정판<span class="link-arrow">↗</span></div>
+        <div class="author">최주영</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/128121607" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/128121607/L" alt="Do it! 플러터 앱 개발 &amp; 출시하기 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2024-06-28</div>
+        <div class="title">Do it! 플러터 앱 개발 &amp; 출시하기<span class="link-arrow">↗</span></div>
+        <div class="author">조준수</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/128858060" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/128858060/L" alt="Do it! IT 서비스 이해를 위한 네트워크 기초 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2024-07-08</div>
+        <div class="title">Do it! IT 서비스 이해를 위한 네트워크 기초<span class="link-arrow">↗</span></div>
+        <div class="author">심준보</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/129133723" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/129133723/L" alt="Do it! HTML+CSS+자바스크립트 웹 표준의 정석 ━ 전면 개정판 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2024-07-30</div>
+        <div class="title">Do it! HTML+CSS+자바스크립트 웹 표준의 정석 ━ 전면 개정판<span class="link-arrow">↗</span></div>
+        <div class="author">고경희</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/130093155" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/130093155/L" alt="Do it! 5일 만에 끝내는 깃 &amp; 깃허브 입문 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2024-08-09</div>
+        <div class="title">Do it! 5일 만에 끝내는 깃 &amp; 깃허브 입문<span class="link-arrow">↗</span></div>
+        <div class="author">고경희, 이고잉</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/139756585" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/139756585/L" alt="Do it! 코드 없이 배우는 데이터 분석 with 오렌지3 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2024-12-01</div>
+        <div class="title">Do it! 코드 없이 배우는 데이터 분석 with 오렌지3<span class="link-arrow">↗</span></div>
+        <div class="author">권서림</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/139913428" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/139913428/L" alt="Do it! 자바스크립트+제이쿼리 입문 - 개정 2판 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2024-12-12</div>
+        <div class="title">Do it! 자바스크립트+제이쿼리 입문 - 개정 2판<span class="link-arrow">↗</span></div>
+        <div class="author">정인용</div>
+      </div>
+    </a>
+<div class="year-divider" id="y2025"><span>2025</span></div>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/140396422" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/140396422/L" alt="Do it! 자바 프로그래밍 입문 - 개정판 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2025-01-10</div>
+        <div class="title">Do it! 자바 프로그래밍 입문 - 개정판<span class="link-arrow">↗</span></div>
+        <div class="author">박은종</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/141792177" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/141792177/L" alt="Do it! 깡샘의 안드로이드 앱 프로그래밍 with 코틀린 - 개정 4판 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2025-02-01</div>
+        <div class="title">Do it! 깡샘의 안드로이드 앱 프로그래밍 with 코틀린 - 개정 4판<span class="link-arrow">↗</span></div>
+        <div class="author">강성윤</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/142874899" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/142874899/L" alt="Do it! 오라클로 배우는 SQL 입문 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2025-03-05</div>
+        <div class="title">Do it! 오라클로 배우는 SQL 입문<span class="link-arrow">↗</span></div>
+        <div class="author">이지훈</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/143049138" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/143049138/L" alt="Do it! 스위프트로 아이폰 앱 만들기 입문 ━ 개정 8판 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2025-03-07</div>
+        <div class="title">Do it! 스위프트로 아이폰 앱 만들기 입문 ━ 개정 8판<span class="link-arrow">↗</span></div>
+        <div class="author">송호정, 이범근</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/146036009" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/146036009/L" alt="Do it! LLM을 활용한 AI 에이전트 개발 입문 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2025-05-09</div>
+        <div class="title">Do it! LLM을 활용한 AI 에이전트 개발 입문<span class="link-arrow">↗</span></div>
+        <div class="author">이성용</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/146497915" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/146497915/L" alt="Do it! JSCODE의 AWS 입문 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2025-05-15</div>
+        <div class="title">Do it! JSCODE의 AWS 입문<span class="link-arrow">↗</span></div>
+        <div class="author">박재성</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/145983717" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/145983717/L" alt="Do it! 오토캐드 2026 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2025-05-30</div>
+        <div class="title">Do it! 오토캐드 2026<span class="link-arrow">↗</span></div>
+        <div class="author">박한울</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/146961129" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/146961129/L" alt="Do it! 클린 프로그래밍 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2025-06-01</div>
+        <div class="title">Do it! 클린 프로그래밍<span class="link-arrow">↗</span></div>
+        <div class="author">김종관</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/148122935" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/148122935/L" alt="Do it! 알고리즘 코딩 테스트 자바 편 — 개정판 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2025-06-30</div>
+        <div class="title">Do it! 알고리즘 코딩 테스트 자바 편 — 개정판<span class="link-arrow">↗</span></div>
+        <div class="author">김종관</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/147871988" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/147871988/L" alt="Do it! 플러터 앱 개발 &amp; 출시하기 - 개정판 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2025-07-08</div>
+        <div class="title">Do it! 플러터 앱 개발 &amp; 출시하기 - 개정판<span class="link-arrow">↗</span></div>
+        <div class="author">조준수</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/150240159" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/150240159/L" alt="Do it! 알고리즘 코딩 테스트 C++ 편 — 개정판 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2025-08-15</div>
+        <div class="title">Do it! 알고리즘 코딩 테스트 C++ 편 — 개정판<span class="link-arrow">↗</span></div>
+        <div class="author">김종관</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/151761784" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/151761784/L" alt="Do it! 알고리즘 코딩 테스트 파이썬 편 — 개정판 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2025-09-02</div>
+        <div class="title">Do it! 알고리즘 코딩 테스트 파이썬 편 — 개정판<span class="link-arrow">↗</span></div>
+        <div class="author">김종관</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/153906020" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/153906020/L" alt="Do it! Go 완전 정복 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2025-09-15</div>
+        <div class="title">Do it! Go 완전 정복<span class="link-arrow">↗</span></div>
+        <div class="author">한성민</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/154286556" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/154286556/L" alt="Do it! 커서로 시작하는 AI 코딩 입문 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2025-09-26</div>
+        <div class="title">Do it! 커서로 시작하는 AI 코딩 입문<span class="link-arrow">↗</span></div>
+        <div class="author">고경희</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/167131962" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/167131962/L" alt="Do it! HTML+CSS 웹 표준의 정석 - 개정 3판 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2025-11-28</div>
+        <div class="title">Do it! HTML+CSS 웹 표준의 정석 - 개정 3판<span class="link-arrow">↗</span></div>
+        <div class="author">고경희</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/167463219" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/167463219/L" alt="Do it! C 언어 프로그래밍 입문 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2025-11-30</div>
+        <div class="title">Do it! C 언어 프로그래밍 입문<span class="link-arrow">↗</span></div>
+        <div class="author">조성호</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/167498170" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/167498170/L" alt="Do it! 리눅스 입문 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2025-12-09</div>
+        <div class="title">Do it! 리눅스 입문<span class="link-arrow">↗</span></div>
+        <div class="author">박필준</div>
+      </div>
+    </a>
+<div class="year-divider" id="y2026"><span>2026</span></div>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/175277733" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/175277733/L" alt="Do it! Vue.js+Nuxt 입문 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2026-02-02</div>
+        <div class="title">Do it! Vue.js+Nuxt 입문<span class="link-arrow">↗</span></div>
+        <div class="author">박성재</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/183757381" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/183757381/L" alt="Do it! 깡샘의 안드로이드 앱 프로그래밍 with 코틀린 ─ 개정 5판 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2026-03-30</div>
+        <div class="title">Do it! 깡샘의 안드로이드 앱 프로그래밍 with 코틀린 ─ 개정 5판<span class="link-arrow">↗</span></div>
+        <div class="author">강성윤</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/189188156" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/189188156/L" alt="Do it! 바이브 코딩 + 안티그래비티 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2026-05-27</div>
+        <div class="title">Do it! 바이브 코딩 + 안티그래비티<span class="link-arrow">↗</span></div>
+        <div class="author">조준수</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/189790267" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/189790267/L" alt="Do it! 유니티 6로 게임 제작 &amp; 출시하기 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2026-05-30</div>
+        <div class="title">Do it! 유니티 6로 게임 제작 &amp; 출시하기<span class="link-arrow">↗</span></div>
+        <div class="author">고정운</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/191580688" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/191580688/L" alt="Do it! 스프링 AI를 활용한 AI 에이전트 개발 입문 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2026-06-15</div>
+        <div class="title">Do it! 스프링 AI를 활용한 AI 에이전트 개발 입문<span class="link-arrow">↗</span></div>
+        <div class="author">박매일</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/191193818" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/191193818/L" alt="Do it! 오토캐드 2027 + AI cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2026-06-19</div>
+        <div class="title">Do it! 오토캐드 2027 + AI<span class="link-arrow">↗</span></div>
+        <div class="author">박한울</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/191211795" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/191211795/L" alt="Do it! AI 시대에 살아남는 프런트엔드 면접의 기술 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2026-06-23</div>
+        <div class="title">Do it! AI 시대에 살아남는 프런트엔드 면접의 기술<span class="link-arrow">↗</span></div>
+        <div class="author">정희</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/195027158" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/195027158/L" alt="Do it! 쉽게 배우는 머신러닝 + 딥러닝 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2026-08-20</div>
+        <div class="title">Do it! 쉽게 배우는 머신러닝 + 딥러닝<span class="link-arrow">↗</span></div>
+        <div class="author">이홍재</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/194315477" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/194315477/L" alt="Do it! 바이브 코딩 + 커서 AI cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2026-08-20</div>
+        <div class="title">Do it! 바이브 코딩 + 커서 AI<span class="link-arrow">↗</span></div>
+        <div class="author">허주희</div>
+      </div>
+    </a>
+
+    <a class="card link-card" href="https://www.yes24.com/product/goods/196628574" target="_blank" rel="noopener noreferrer">
+      <div class="cover"><img src="https://image.yes24.com/goods/196628574/L" alt="Do it! 바이브 코딩 + 클로드 코드 cover" loading="lazy" onerror="this.onerror=null;this.closest('.cover').classList.add('fallback')"></div>
+      <div class="meta">
+        <div class="date">2026-09-20</div>
+        <div class="title">Do it! 바이브 코딩 + 클로드 코드<span class="link-arrow">↗</span></div>
+        <div class="author">고경희</div>
+      </div>
+    </a>
+</div>
+
+<footer>
+  도서목록(절판 포함) 기준 · 전자책 중복 및 표기 오차 제거 후 172종 · 절판 여부는 원본 데이터의 도서상태를 그대로 사용 · 표지 클릭 시 Yes24 상품 페이지로 이동 (연결 가능한 95종만)
+</footer>
+</body>
+</html>
